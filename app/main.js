@@ -1,1 +1,1 @@
-console.log('Hello world!');
+var React = require('react');
