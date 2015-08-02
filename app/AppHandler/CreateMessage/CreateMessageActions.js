@@ -1,8 +1,10 @@
-var Firebase = require('../../../universal/utils/FirebaseUtils').panel(ENV.PANEL);
+import Firebase from 'firebase';
+var FirebaseDB = require('../../../universal/utils/FirebaseUtils').panel(ENV.PANEL);
 var CreateMessageActions = {
   save(message) {
-    Firebase.child('discussion').push({
-      source: message
+    FirebaseDB.child('discussion').push({
+      source: message,
+      timeStamp: Firebase.ServerValue.TIMESTAMP
     })
   }
 };

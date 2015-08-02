@@ -13,6 +13,7 @@
     "firebase": "^2.2.9",
     "jade": "~1.11.0",
     "lodash": "^3.10.0",
+    "moment": "^2.10.6",
     "morgan": "~1.6.1",
     "react": "^0.13.3",
     "serve-favicon": "~2.3.0",
