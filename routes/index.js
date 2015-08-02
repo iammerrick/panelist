@@ -8,16 +8,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/new', function(req, res, next) {
-  var id = uuid();
-  var panel = {};
 
-  panel[id] = {
-    discussion: []
+  var panel = {
+    discussions: [],
+    name: 'Untitled'
   };
 
-  FirebaseUtils.main.set(panel);
+  var id = FirebaseUtils.main.push(panel);
 
-  res.redirect('/panel/'+id);
+  res.redirect('/panel/'+id.name());
 });
 
 router.get('/panel/:id', function(req, res, next) {
