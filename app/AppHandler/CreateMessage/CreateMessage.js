@@ -1,4 +1,5 @@
 import React from 'react';
+import CreateMessageActions from './CreateMessageActions';
 
 class CreateMessage extends React.Component {
   constructor() {
@@ -14,7 +15,8 @@ class CreateMessage extends React.Component {
   }
 
   handleSubmit() {
-    console.log(this.state.value);  
+    console.log(this.state.value);
+    CreateMessageActions.save(this.state.value);
   }
 
   render() {
