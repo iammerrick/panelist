@@ -1,5 +1,5 @@
 import React from 'react';
-var Firebase = require('../universal/utils/FirebaseUtils').panel(ENV.PANEL);
+var Firebase = require('../universal/utils/FirebaseUtils').main.child(ENV.PANEL);
 import AppHandler from './AppHandler/AppHandler';
 
 Firebase.on('value', function(snapshot){
