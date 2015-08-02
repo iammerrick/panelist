@@ -10,11 +10,19 @@ router.get('/', function(req, res, next) {
 router.get('/new', function(req, res, next) {
 
   var panel = {
-    discussions: [],
     name: 'Untitled'
   };
 
+
   var id = FirebaseUtils.main.push(panel);
+  var discussions = id.child('discussion');
+  discussions.push({
+    source: 'Hello world!'
+  });
+
+  discussions.push({
+    source: 'Goodbye world!'
+  });
 
   res.redirect('/panel/'+id.name());
 });

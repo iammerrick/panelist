@@ -3,7 +3,7 @@ import ChatList from './ChatList/ChatList';
 
 export default class AppHandler extends React.Component {
   render() {
-    return <ChatList />;
+    return <ChatList discussion={this.props.store.discussion} />;
   }
 }
 
