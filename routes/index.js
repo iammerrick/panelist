@@ -20,7 +20,9 @@ router.get('/new', function(req, res, next) {
 });
 
 router.get('/panel/:id', function(req, res, next) {
- res.send(req.params.id); 
+ res.render('app', {
+   panel: req.params.id
+ }); 
 });
 
 module.exports = router;
