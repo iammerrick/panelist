@@ -1,8 +1,8 @@
 module.exports = {
-  entry: './app/main.js',
+  entry: './src/main.js',
   output: {
-    path: '/public/',
-    filename: 'main.js'
+    path: './built/',
+    filename: '[name].js'
   },
   devtool: 'inline-source-map',
   module: {
