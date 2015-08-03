@@ -12,17 +12,17 @@ class Presence extends React.Component {
   componentWillMount() {
     var online = Firebase.child('/.info/connected');
     online.on('value', this.handleOnline, this);
-    Firebase.child(`panels/${this.props.panelId}/presence`).on('value', this.handleChange, this);
+    Firebase.child(`panels/${this.props.panelId}`).on('value', this.handleChange, this);
   }
 
   componentWillUnmount() {
-    Firebase.child(`panels/${this.props.panelId}/presence`).off('value', this.handleChange, this);
+    Firebase.child(`panels/${this.props.panelId}`).off('value', this.handleChange, this);
     Firebase.child('/.info/connected').off('value', this.handleOnline, this);
   }
 
   handleChange(snapshot) {
     this.setState({
-      users: snapshot.val()
+      panel: snapshot.val()
     });
   }
 
@@ -33,9 +33,19 @@ class Presence extends React.Component {
     }
   }
 
+  handleUserClick(key) {
+    if (this.state.panel.facilitator === Firebase.getAuth().uid) {
+      Firebase.child(`panels/${this.props.panelId}/microphones`).child(key).set(true);
+    }
+  }
+
   render() {
-    var users = _.map(this.state.users, (user, key) => {
-      return <User userId={key} key={key} />;
+    var users = _.map(this.state.panel.presence, (user, key) => {
+      return (
+        <div onClick={this.handleUserClick.bind(this, key)} key={key}>
+          <User userId={key} />
+        </div>
+      );
     });
 
     return (
