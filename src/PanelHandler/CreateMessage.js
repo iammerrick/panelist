@@ -1,5 +1,6 @@
 import React from 'react';
 import PanelActions from './PanelActions';
+import Observe from '../utils/Observe';
 
 class CreateMessage extends React.Component {
   constructor() {
@@ -26,7 +27,7 @@ class CreateMessage extends React.Component {
   }
 
   handleKeyUp(e) {
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13 && !this.props.store.isLocked) {
       this.handleSubmitClick();
     }
   }
@@ -34,11 +35,15 @@ class CreateMessage extends React.Component {
   render() {
     return (
       <div>
-        <textarea onChange={this.handleChange.bind(this)} onKeyUp={this.handleKeyUp.bind(this)} value={this.state.value}></textarea>
-        <a onClick={this.handleSubmitClick.bind(this)}>Submit</a>
+        <textarea readOnly={this.props.store.isLocked} onChange={this.handleChange.bind(this)} onKeyUp={this.handleKeyUp.bind(this)} value={this.state.value}></textarea>
+        <button disabled={this.props.store.isLocked} onClick={this.handleSubmitClick.bind(this)}>Submit</button>
       </div>
     );
   }
 }
 
-export default CreateMessage;
+CreateMessage.observable = (props) => {
+  return `panels/${props.panelId}`;
+}
+
+export default Observe(CreateMessage);

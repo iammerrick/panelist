@@ -8,5 +8,9 @@ export default {
       userId: Firebase.getAuth().uid,
       timeStamp: FB.ServerValue.TIMESTAMP
     });
+  },
+
+  setLocked(id, value) {
+    Firebase.child('panels').child(id).child('isLocked').set(value);
   }
 }
