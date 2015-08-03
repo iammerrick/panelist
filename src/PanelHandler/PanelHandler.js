@@ -11,7 +11,9 @@ import './PanelHandler.css'
 class PanelHandler extends React.Component {
 
   handleLockClick() {
-    PanelActions.setLocked(this.props.panelId, !this.props.store.isLocked);
+    if (this.props.store.facilitator === Firebase.getAuth().uid) {
+      PanelActions.setLocked(this.props.panelId, !this.props.store.isLocked);
+    }
   }
 
   render() {
