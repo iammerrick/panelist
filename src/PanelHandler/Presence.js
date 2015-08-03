@@ -56,8 +56,13 @@ class Presence extends React.Component {
 
       return (
         <div onClick={this.handleUserClick.bind(this, key)} key={key} className={classes}>
-          <span className={indicator}></span>
-          <User userId={key} />
+          <div>
+            <span className={indicator}></span>
+          </div>
+          <div>
+            {this.state.panel.facilitator === key ? <div className='Presence__Annotation'>Facilitator</div> : null }
+            <User userId={key} />
+          </div>
         </div>
       );
     });

@@ -20,3 +20,9 @@
 .Presence__Indicator--HasMicrophone {
   background-color: #bada55;
 }
+
+.Presence__Annotation {
+  color: #999;
+  padding-left: 32px;
+  font-size: 10px;
+}
