@@ -2,7 +2,7 @@ import Firebase from '../utils/Firebase';
 import URL from '../utils/URL';
 
 var LoginActions = {
-  twitter() {
+  twitter(redirect) {
     Firebase.authWithOAuthPopup('twitter', function(error, response) {
       if (error) {
         console.log('Login Failed!', error);
@@ -12,7 +12,7 @@ var LoginActions = {
           username: response.twitter.username,
           image: response.twitter.profileImageURL
         });
-        URL.redirect('/dashboard');
+        URL.redirect(redirect);
       }
     });
   },

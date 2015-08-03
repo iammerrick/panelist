@@ -4,7 +4,7 @@ import LoginActions from './LoginActions';
 class LoginHandler extends React.Component {
 
   handleClick() {
-    LoginActions.twitter();
+    LoginActions.twitter(this.props.redirect);
   }
 
   render() {

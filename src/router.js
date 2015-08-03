@@ -9,12 +9,13 @@ import DashboardHandler from './DashboardHandler/DashboardHandler';
 import Firebase from './utils/Firebase';
 import URL from './utils/URL';
 import PanelHandler from './PanelHandler/PanelHandler';
+import queryString from 'query-string';
 
 var el = document.getElementById('app');
 
 function lock(route) {
   return (...args) => {
-    if ( ! Firebase.getAuth()) return URL.redirect('/login');
+    if ( ! Firebase.getAuth()) return URL.redirect(`/login?redirect=${window.location}`);
     route(...args);
   }
 }
@@ -24,8 +25,9 @@ var routes = {
     React.render(<AppHandler><HomeHandler /></AppHandler>, el);
   },
   '/login': () => {
+    var { redirect } = queryString.parse(window.location.search);
     if (Firebase.getAuth()) return URL.redirect('/dashboard');
-    React.render(<AppHandler><LoginHandler /></AppHandler>, el);
+    React.render(<AppHandler><LoginHandler redirect={redirect || '/dashboard'} /></AppHandler>, el);
   },
   '/dashboard': lock(() => {
     React.render(<AppHandler><DashboardHandler /></AppHandler>, el);
