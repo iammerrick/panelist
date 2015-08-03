@@ -12,5 +12,13 @@ export default {
 
   setLocked(id, value) {
     Firebase.child('panels').child(id).child('isLocked').set(value);
+  },
+
+  removeMessage(id, messageId) {
+    Firebase.child('panels').child(id).child(`messages/${messageId}`).remove();
+  },
+
+  setMicrophone(panel, user, value) {
+    Firebase.child(`panels/${panel}/microphones`).child(user).set(value);
   }
 }

@@ -1,18 +1,46 @@
-.Topic {
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  border-radius: 8px;
+.PanelHandler {
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
-.PanelHandler__Header {
-  display: flex;
-  justify-content: flex-end;
+.PanelHandler__Sidebar {
+  flex-basis: 360px;
+  background-color: #F9F9F9;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.PanelHandler__Create {
+  background-color: #BADA55;
+  display: block;
+  color: #FFF;
+  text-decoration: none;
+  padding: 16px;
+  font-weight: bold;
+}
+
+.PanelHandler__Create__Text {
+  padding-left: 8px;
+}
+
+.PanelHandler__Title {
+  background-color: #ECECEC;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding: 8px 16px;
 }
 
 .PanelHandler__Body {
-  display: flex;
+  padding: 16px;
 }
 
-.PanelHandler__Messages {
-  flex: 1;
+.PanelHandler__Header__FirstIcon {
+  padding-right: 8px;
+}
+
+.PanelHandler__Header {
+
 }
