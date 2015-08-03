@@ -1,10 +1,17 @@
 import React from 'react';
+import PanelActions from './PanelActions';
 
 class PanelCreate extends React.Component {
+  handleClick() {
+    PanelActions.create({
+      // populate from form here...
+    }); 
+  }
+
   render() {
     return (
       <div>
-        Create a Panel
+
       </div>
     );
   }
