@@ -17,7 +17,11 @@ class PanelHandler extends React.Component {
   }
 
   handleShareIntent() {
-    window.open(`https://twitter.com/intent/tweet?url=${window.location}&text=${this.props.store.topic}&via=panelistio`, 'Share via Panelist.io', 'width=600,height=300,scrollbars=no,location=no,toolbar=no')
+    window.open(
+      `https://twitter.com/intent/tweet?url=${window.location}&text=${this.props.store.topic}&via=panelistio`,
+      'Share via Panelist.io', 
+      'width=600,height=300,scrollbars=no,location=no,toolbar=no'
+    );
   }
 
   render() {
