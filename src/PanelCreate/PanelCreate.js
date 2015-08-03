@@ -5,13 +5,13 @@ class PanelCreate extends React.Component {
   handleClick() {
     PanelActions.create({
       // populate from form here...
-    }); 
+    });
   }
 
   render() {
     return (
       <div>
-
+      
       </div>
     );
   }
