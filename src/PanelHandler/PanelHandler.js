@@ -4,7 +4,7 @@ import Observe from '../utils/Observe';
 import User from './User';
 import CreateMessage from './CreateMessage';
 import Messages from './Messages';
-import Presence from './Presense';
+import Presence from './Presence';
 import './PanelHandler.css'
 
 class PanelHandler extends React.Component {
@@ -12,15 +12,21 @@ class PanelHandler extends React.Component {
   render() {
     return (
       <div>
-        <div className="PanelHandler__Header">
-          <Presence />
+        <div className='PanelHandler__Header'>
           <User userId={Firebase.getAuth().uid}/>
         </div>
         <div className='Topic'>
           {this.props.store.topic}
         </div>
-        <Messages panelId={this.props.panelId} />
-        <CreateMessage panelId={this.props.panelId} />
+        <div className='PanelHandler__Body'>
+          <div className='PanelHandler__Messages'>
+            <Messages panelId={this.props.panelId} />
+            <CreateMessage panelId={this.props.panelId} />
+          </div>
+          <div>
+            <Presence panelId={this.props.panelId}/>
+          </div>
+        </div>
       </div>
     );
   }

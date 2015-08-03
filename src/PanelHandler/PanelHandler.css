@@ -8,3 +8,11 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.PanelHandler__Body {
+  display: flex;
+}
+
+.PanelHandler__Messages {
+  flex: 1;
+}

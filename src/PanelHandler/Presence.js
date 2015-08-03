@@ -1,5 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
+import User from './User';
 import Firebase from '../utils/Firebase';
 
 class Presence extends React.Component {
@@ -11,11 +12,18 @@ class Presence extends React.Component {
   componentWillMount() {
     var online = Firebase.child('/.info/connected');
     online.on('value', this.handleOnline, this);
+    Firebase.child(`panels/${this.props.panelId}/presence`).on('value', this.handleChange, this);
   }
 
   componentWillUnmount() {
+    Firebase.child(`panels/${this.props.panelId}/presence`).off('value', this.handleChange, this);
     Firebase.child('/.info/connected').off('value', this.handleOnline, this);
+  }
 
+  handleChange(snapshot) {
+    this.setState({
+      users: snapshot.val()
+    });
   }
 
   handleOnline(snapshot) {
@@ -27,8 +35,9 @@ class Presence extends React.Component {
 
   render() {
     var users = _.map(this.state.users, (user, key) => {
-      return <div>{user.name}</div>;
+      return <User userId={key} key={key} />;
     });
+
     return (
       <div>
         {users} 
@@ -36,5 +45,4 @@ class Presence extends React.Component {
     );
   }
 }
-
 export default Presence;
