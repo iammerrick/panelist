@@ -36,6 +36,11 @@
 .PanelHandler__Body {
   padding: 16px;
   flex: 1;
+  position: absolute;
+  left: 360px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
 }
 
 .PanelHandler__Header__FirstIcon {
