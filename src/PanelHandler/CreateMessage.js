@@ -19,12 +19,16 @@ class CreateMessage extends React.Component {
     PanelActions.create(this.props.panelId, {
       source: this.state.value
     });
+
+    this.setState({
+      value: ''
+    });
   }
 
   render() {
     return (
       <div>
-        <textarea onChange={this.handleChange.bind(this)} value={this.state.message}></textarea>
+        <textarea onChange={this.handleChange.bind(this)} value={this.state.value}></textarea>
         <a onClick={this.handleSubmitClick.bind(this)}>Submit</a>
       </div>
     );

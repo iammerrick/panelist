@@ -1,0 +1,23 @@
+.Message {
+  padding: 8px 0;
+}
+
+.MessageMeta {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.MessageMeta__Timestamp {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 12px;
+  padding-left: 4px;
+}
+
+.Message__Source {
+  padding-left: 32px;
+}
+
+.MessageMeta__Username{
+  font-weight: bold;
+}

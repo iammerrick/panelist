@@ -4,6 +4,7 @@ import Observe from '../utils/Observe';
 import CurrentUser from './CurrentUser';
 import CreateMessage from './CreateMessage';
 import Messages from './Messages';
+import './PanelHandler.css'
 
 class PanelHandler extends React.Component {
 
@@ -11,7 +12,9 @@ class PanelHandler extends React.Component {
     return (
       <div>
         <CurrentUser />
-        {this.props.store.topic}
+        <div className='Topic'>
+          {this.props.store.topic}
+        </div>
         <Messages panelId={this.props.panelId} />
         <CreateMessage panelId={this.props.panelId} />
       </div>

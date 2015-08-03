@@ -1,0 +1,15 @@
+.User {
+  display: flex;
+  align-items: center;
+}
+
+.User__Image {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  padding-right: 8px;
+}
+
+.User__Name {
+
+}
