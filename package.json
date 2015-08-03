@@ -12,7 +12,8 @@
     "lodash": "^3.10.0",
     "moment": "^2.10.6",
     "query-string": "^2.4.0",
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "react-classset": "0.0.2"
   },
   "devDependencies": {
     "babel-core": "^5.8.20",

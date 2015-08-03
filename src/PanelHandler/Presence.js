@@ -2,6 +2,8 @@ import React from 'react';
 import _ from 'lodash';
 import User from './User';
 import Firebase from '../utils/Firebase';
+import ClassSet from 'react-classset';
+import './Presence.css';
 
 class Presence extends React.Component {
   constructor() {
@@ -35,14 +37,26 @@ class Presence extends React.Component {
 
   handleUserClick(key) {
     if (this.state.panel.facilitator === Firebase.getAuth().uid) {
-      Firebase.child(`panels/${this.props.panelId}/microphones`).child(key).set(true);
+      var toggle = !this.state.panel.microphones[key];
+      Firebase.child(`panels/${this.props.panelId}/microphones`).child(key).set(toggle);
     }
   }
 
   render() {
     var users = _.map(this.state.panel.presence, (user, key) => {
+      var classes = ClassSet({
+        'Presence__User': true,
+        'Presence__User--HasMicrophone': this.state.panel.microphones[key]
+      });
+
+      var indicator = ClassSet({
+        'Presence__Indicator': true,
+        'Presence__Indicator--HasMicrophone': this.state.panel.microphones[key]
+      });
+
       return (
-        <div onClick={this.handleUserClick.bind(this, key)} key={key}>
+        <div onClick={this.handleUserClick.bind(this, key)} key={key} className={classes}>
+          <span className={indicator}></span>
           <User userId={key} />
         </div>
       );
