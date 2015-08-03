@@ -2,5 +2,9 @@
   background-color: rgba(0, 0, 0, 0.1);
   padding: 16px;
   border-radius: 8px;
+}
 
+.PanelHandler__Header {
+  display: flex;
+  justify-content: flex-end;
 }
