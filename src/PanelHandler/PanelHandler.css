@@ -40,6 +40,11 @@
 
 .PanelHandler__Header__FirstIcon {
   padding-right: 8px;
+  cursor: pointer;
+}
+
+.PanelHandler__Header__SecondIcon {
+  cursor: pointer;
 }
 
 .PanelHandler__Header {

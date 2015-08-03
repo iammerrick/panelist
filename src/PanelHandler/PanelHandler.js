@@ -36,7 +36,7 @@ class PanelHandler extends React.Component {
   handleShareIntent() {
     window.open(
       `https://twitter.com/intent/tweet?url=${window.location}&text=${this.props.store.topic}&via=panelistio`,
-      'Share via Panelist.io', 
+      'Share via Panelist.io',
       'width=600,height=300,scrollbars=no,location=no,toolbar=no'
     );
   }
@@ -68,11 +68,11 @@ class PanelHandler extends React.Component {
           </div>
           <Users userIds={[facilitator]} panelId={this.props.panelId} />
           <div className='PanelHandler__Title'>
-            Panelists 
+            Panelists
           </div>
           <Users userIds={panelists} panelId={this.props.panelId} />
           <div className='PanelHandler__Title'>
-            Viewers 
+            Viewers
           </div>
           <Users userIds={viewers} panelId={this.props.panelId} />
         </div>
@@ -80,7 +80,7 @@ class PanelHandler extends React.Component {
           <div className='PanelHandler__Header'>
             <div>
               <a onClick={this.handleShareIntent.bind(this)} className='PanelHandler__Header__FirstIcon'><i className='icon-twitter'></i></a>
-              <span onClick={this.handleLockClick.bind(this)}>{this.props.store.isLocked ? <i className='icon-lock'></i> : <i className='icon-unlocked'></i>}</span>
+              <span className="PanelHandler__Header__SecondIcon" onClick={this.handleLockClick.bind(this)}>{this.props.store.isLocked ? <i className='icon-lock'></i> : <i className='icon-lock-open'></i>}</span>
             </div>
             <div className='Topic'>
               {this.props.store.topic}

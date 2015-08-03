@@ -23,7 +23,7 @@ class Messages extends React.Component {
             </div>
             <div className='MessageMeta__Timestamp'>
               <Moment timeStamp={message.timeStamp} />
-              { message.userId === uid ? <span onClick={this.handleRemoveClick.bind(this, key)}>x</span> : null}
+              { message.userId === uid ? <span className="MessageMeta__RemoveIcon" onClick={this.handleRemoveClick.bind(this, key)}><i className='icon-remove'></i></span> : null}
             </div>
           </div>
           <div className='Message__Source'>
