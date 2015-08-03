@@ -3,6 +3,7 @@ import User from './User';
 import Observe from '../utils/Observe';
 import Firebase from '../utils/Firebase';
 import _ from 'lodash';
+import Moment from './Moment';
 
 class Messages extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class Messages extends React.Component {
         <div key={key}>
           {message.source}
           <User userId={message.userId} />
+          <Moment timeStamp={message.timeStamp} />
         </div>
       );
     });
