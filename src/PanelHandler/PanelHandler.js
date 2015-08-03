@@ -16,6 +16,10 @@ class PanelHandler extends React.Component {
     }
   }
 
+  handleShareIntent() {
+    window.open(`https://twitter.com/intent/tweet?url=${window.location}&text=${this.props.store.topic}&via=panelistio`, 'Share via Panelist.io', 'width=600,height=300,scrollbars=no,location=no,toolbar=no')
+  }
+
   render() {
 
     function hasMicrophone(user, panel) {
@@ -28,6 +32,7 @@ class PanelHandler extends React.Component {
           <User userId={Firebase.getAuth().uid}/>
         </div>
         <div className='Topic'>
+          <a onClick={this.handleShareIntent.bind(this)}>Share</a>
           <div onClick={this.handleLockClick.bind(this)}>{this.props.store.isLocked ? 'Locked' : 'Unlocked'}</div>
           {this.props.store.topic}
         </div>
