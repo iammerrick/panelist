@@ -6,9 +6,9 @@ import _ from 'lodash';
 
 class Messages extends React.Component {
   render() {
-    var messages = _.map(this.props.store, (message) => {
+    var messages = _.map(this.props.store, (message, key) => {
       return (
-        <div>
+        <div key={key}>
           {message.source}
           <User userId={message.userId} />
         </div>
