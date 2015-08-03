@@ -2,6 +2,8 @@ import React from 'react';
 import Firebase from '../utils/Firebase';
 import Observe from '../utils/Observe';
 import CurrentUser from './CurrentUser';
+import CreateMessage from './CreateMessage';
+import Messages from './Messages';
 
 class PanelHandler extends React.Component {
 
@@ -10,6 +12,8 @@ class PanelHandler extends React.Component {
       <div>
         <CurrentUser />
         {this.props.store.topic}
+        <Messages panelId={this.props.panelId} />
+        <CreateMessage panelId={this.props.panelId} />
       </div>
     );
   }
