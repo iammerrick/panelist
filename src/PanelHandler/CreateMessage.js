@@ -25,10 +25,16 @@ class CreateMessage extends React.Component {
     });
   }
 
+  handleKeyUp(e) {
+    if (e.keyCode === 13) {
+      this.handleSubmitClick();
+    }
+  }
+
   render() {
     return (
       <div>
-        <textarea onChange={this.handleChange.bind(this)} value={this.state.value}></textarea>
+        <textarea onChange={this.handleChange.bind(this)} onKeyUp={this.handleKeyUp.bind(this)} value={this.state.value}></textarea>
         <a onClick={this.handleSubmitClick.bind(this)}>Submit</a>
       </div>
     );
