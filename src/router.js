@@ -8,13 +8,14 @@ import HomeHandler from './HomeHandler/HomeHandler';
 import DashboardHandler from './DashboardHandler/DashboardHandler';
 import Firebase from './utils/Firebase';
 import URL from './utils/URL';
+import PanelHandler from './PanelHandler/PanelHandler';
 
 var el = document.getElementById('app');
 
 function lock(route) {
-  return () => {
+  return (...args) => {
     if ( ! Firebase.getAuth()) return URL.redirect('/login');
-    route();
+    route(...args);
   }
 }
 
@@ -31,6 +32,9 @@ var routes = {
   }),
   '/panel/create': lock(() => {
     React.render(<AppHandler><PanelCreate /></AppHandler>, el);
+  }),
+  '/panel/:id': lock((id) => {
+    React.render(<AppHandler><PanelHandler panelId={id} /></AppHandler>, el);
   }),
   '/logout': () => {
     LoginActions.logout();

@@ -5,6 +5,7 @@ class DashboardHandler extends React.Component {
     return (
       <div>
         Dashboard
+        <a href="/panel/create">Create Panel</a>
         <a href="/logout">Logout</a>
       </div>
     );

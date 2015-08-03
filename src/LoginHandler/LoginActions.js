@@ -7,6 +7,11 @@ var LoginActions = {
       if (error) {
         console.log('Login Failed!', error);
       } else {
+        Firebase.child('users').child(response.uid).set({
+          name: response.twitter.displayName,
+          username: response.twitter.username,
+          image: response.twitter.profileImageURL
+        });
         URL.redirect('/dashboard');
       }
     });
