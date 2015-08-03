@@ -35,6 +35,7 @@
 
 .PanelHandler__Body {
   padding: 16px;
+  flex: 1;
 }
 
 .PanelHandler__Header__FirstIcon {
@@ -42,5 +43,13 @@
 }
 
 .PanelHandler__Header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 16px;
+  align-items: center;
+}
 
+.Topic {
+  font-size: 16px;
 }

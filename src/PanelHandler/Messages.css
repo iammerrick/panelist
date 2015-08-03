@@ -1,11 +1,11 @@
 .Message {
   padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .MessageMeta {
   display: flex;
   align-items: center;
-  padding: 8px 0;
 }
 
 .MessageMeta__Timestamp {
@@ -16,8 +16,11 @@
 
 .Message__Source {
   padding-left: 32px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
 }
 
 .MessageMeta__Username{
   font-weight: bold;
+  font-size: 14px;
 }
