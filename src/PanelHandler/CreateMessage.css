@@ -1,0 +1,32 @@
+.CreateMessage {
+  display: flex;
+  position: relative;
+}
+
+.CreateMessage__Input {
+  background-color: #FFF;
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+  margin: auto;
+  width: 100%;
+}
+
+.CreateMessage__Submit {
+  display: block;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 16px;
+}
+
+.CreateMessage__Submit:hover {
+  cursor: pointer;
+}
+
+.CreateMessage__Input__Textarea {
+  border: 0;
+  outline: none;
+  resize: none;
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+}
