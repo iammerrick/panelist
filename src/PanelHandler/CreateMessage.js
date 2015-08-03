@@ -9,7 +9,7 @@ class CreateMessage extends React.Component {
       value: ''
     };
   }
-  
+
   handleChange(e) {
     this.setState({
       value: e.target.value
@@ -17,9 +17,11 @@ class CreateMessage extends React.Component {
   }
 
   handleSubmitClick() {
-    PanelActions.create(this.props.panelId, {
-      source: this.state.value
-    });
+    if(this.state.value.replace(/\s/g, '').length) {
+      PanelActions.create(this.props.panelId, {
+        source: this.state.value
+      });
+    }
 
     this.setState({
       value: ''
