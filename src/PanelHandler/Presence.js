@@ -3,6 +3,7 @@ import _ from 'lodash';
 import User from './User';
 import Firebase from '../utils/Firebase';
 import ClassSet from 'react-classset';
+import PresenceActions from './PresenceActions';
 import './Presence.css';
 
 class Presence extends React.Component {
@@ -29,16 +30,16 @@ class Presence extends React.Component {
   }
 
   handleOnline(snapshot) {
-    if (snapshot.val()) {
-      Firebase.child(`panels/${this.props.panelId}/presence`).child(Firebase.getAuth().uid).onDisconnect().remove();
-      Firebase.child(`panels/${this.props.panelId}/presence`).child(Firebase.getAuth().uid).set(snapshot.val());
+    var status = snapshot.val();
+    if (status) {
+      PresenceActions.addPresence(this.props.panelId, Firebase.getAuth().uid, status);
     }
   }
 
   handleUserClick(key) {
     if (this.state.panel.facilitator === Firebase.getAuth().uid) {
       var toggle = !this.state.panel.microphones[key];
-      Firebase.child(`panels/${this.props.panelId}/microphones`).child(key).set(toggle);
+      PresenceActions.setMicrophone(this.props.panelId, key, toggle);
     }
   }
 
