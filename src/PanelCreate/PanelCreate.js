@@ -1,5 +1,6 @@
 import React from 'react';
 import PanelActions from './PanelActions';
+import './PanelCreate.css'
 
 class PanelCreate extends React.Component {
   constructor() {
@@ -21,11 +22,19 @@ class PanelCreate extends React.Component {
     });
   }
 
+  handleKeyUp(e) {
+    if (e.keyCode === 13) {
+      this.handleClick();
+    }
+  }
+
   render() {
     return (
-      <div>
-        <textarea onChange={this.handleChange.bind(this)} value={this.state.topic}></textarea>
-        <a onClick={this.handleClick.bind(this)}>Create Panel</a>
+      <div className='PanelCreate'>
+        <div className='PanelCreate__Input'>
+          <a className='PanelCreate__Submit'  onClick={this.handleClick.bind(this)}><i className='icon-plus' /></a>
+          <input onKeyUp={this.handleKeyUp.bind(this)} className='PanelCreate__Input__Textarea' onChange={this.handleChange.bind(this)} value={this.state.topic}/>
+        </div>
       </div>
     );
   }

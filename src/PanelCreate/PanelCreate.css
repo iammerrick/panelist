@@ -1,0 +1,33 @@
+.PanelCreate {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #BADA55;
+}
+
+.PanelCreate__Input {
+  background-color: #FFF;
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+  margin: auto;
+  min-width: 720px;
+}
+
+.PanelCreate__Submit {
+  display: block;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 16px;
+}
+
+.PanelCreate__Input__Textarea {
+  border: 0;
+  outline: none;
+  resize: none;
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+}
