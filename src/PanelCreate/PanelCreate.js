@@ -31,9 +31,14 @@ class PanelCreate extends React.Component {
   render() {
     return (
       <div className='PanelCreate'>
-        <div className='PanelCreate__Input'>
-          <a className='PanelCreate__Submit'  onClick={this.handleClick.bind(this)}><i className='icon-plus' /></a>
-          <input onKeyUp={this.handleKeyUp.bind(this)} className='PanelCreate__Input__Textarea' onChange={this.handleChange.bind(this)} value={this.state.topic}/>
+        <div className='PanelCreate__Container'>
+          <div className='PanelCreate__Instruction'>
+          Enter a topic to discuss...
+          </div>
+          <div className='PanelCreate__Input'>
+            <a className='PanelCreate__Submit'  onClick={this.handleClick.bind(this)}><i className='icon-plus' /></a>
+            <input onKeyUp={this.handleKeyUp.bind(this)} className='PanelCreate__Input__Textarea' onChange={this.handleChange.bind(this)} value={this.state.topic}/>
+          </div>
         </div>
       </div>
     );
