@@ -39,3 +39,12 @@
   color: rgba(255, 255, 255, 0.5);
   padding-bottom: 8px;
 }
+
+.PanelCreate__Link {
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+  position: absolute;
+  left: 16px;
+  top: 16px;
+}

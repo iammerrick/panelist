@@ -31,6 +31,8 @@ class PanelCreate extends React.Component {
   render() {
     return (
       <div className='PanelCreate'>
+
+        <a href="/dashboard" className='PanelCreate__Link'>Back to Dashboard</a>
         <div className='PanelCreate__Container'>
           <div className='PanelCreate__Instruction'>
           Enter a topic to discuss...

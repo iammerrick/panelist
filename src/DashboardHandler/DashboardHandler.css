@@ -1,0 +1,52 @@
+.DashboardHandler {
+  background-color: #BADA55;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: #FFF;
+  display: flex;
+}
+
+.DashboardHandler__Logout {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #FFF;
+  font-weight: bold;
+}
+
+.PanelList {
+  min-width: 720px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.DashboardHandler__Create {
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.DashboardHandler__Create__Icon {
+  padding-right: 4px;
+}
+
+.PanelListItem {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content:space-between;
+  color: #FFF;
+  text-decoration: none;
+}
