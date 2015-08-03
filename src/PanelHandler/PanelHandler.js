@@ -10,6 +10,11 @@ import './PanelHandler.css'
 class PanelHandler extends React.Component {
 
   render() {
+
+    function hasMicrophone(user, panel) {
+      return panel.microphones[user];
+    }
+
     return (
       <div>
         <div className='PanelHandler__Header'>
@@ -21,7 +26,7 @@ class PanelHandler extends React.Component {
         <div className='PanelHandler__Body'>
           <div className='PanelHandler__Messages'>
             <Messages panelId={this.props.panelId} />
-            <CreateMessage panelId={this.props.panelId} />
+            { hasMicrophone(Firebase.getAuth().uid, this.props.store) ? <CreateMessage panelId={this.props.panelId} /> : null }
           </div>
           <div>
             <Presence panelId={this.props.panelId}/>
