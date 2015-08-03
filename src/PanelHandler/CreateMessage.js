@@ -1,6 +1,7 @@
 import React from 'react';
 import PanelActions from './PanelActions';
 import Observe from '../utils/Observe';
+import './CreateMessage.css'
 
 class CreateMessage extends React.Component {
   constructor() {
@@ -36,9 +37,11 @@ class CreateMessage extends React.Component {
 
   render() {
     return (
-      <div>
-        <textarea readOnly={this.props.store.isLocked} onChange={this.handleChange.bind(this)} onKeyUp={this.handleKeyUp.bind(this)} value={this.state.value}></textarea>
-        <button disabled={this.props.store.isLocked} onClick={this.handleSubmitClick.bind(this)}>Submit</button>
+      <div className='CreateMessage'>
+        <div className='CreateMessage__Input'>
+          <a className='CreateMessage__Submit' disabled={this.props.store.isLocked} onClick={this.handleSubmitClick.bind(this)}><i className='icon-plus' /></a>
+          <input readOnly={this.props.store.isLocked} onKeyUp={this.handleKeyUp.bind(this)} className='CreateMessage__Input__Textarea' onChange={this.handleChange.bind(this)} value={this.state.value}/>
+        </div>
       </div>
     );
   }
