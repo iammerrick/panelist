@@ -87,7 +87,7 @@ class PanelHandler extends React.Component {
           <div className='PanelHandler__Title'>
             <div>Share This Panel</div>
             <div><a onClick={this.handleShareIntent.bind(this)}><i className='icon-twitter'></i></a></div>
-          
+
           </div>
           <div className='PanelHandler__Share__InputContainer'>
             <input readOnly={true} value={window.location} className='PanelHandler__Share__Input' />

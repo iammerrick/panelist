@@ -7,6 +7,10 @@
   left: 0;
 }
 
+.icon-twitter {
+  cursor: pointer;
+}
+
 .PanelHandler__Sidebar {
   flex-basis: 280px;
   background-color: #F9F9F9;
@@ -99,6 +103,7 @@
 
 .PanelHandler__Mobile__Close {
   display: none;
+  cursor: pointer;
   position: absolute;
   padding: 16px;
   top: 0px;
@@ -111,7 +116,7 @@
 }
 
 .PanelHandler__Share__Input {
-  background-color: #ECECEC; 
+  background-color: #ECECEC;
   padding: 8px;
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -146,4 +151,5 @@
   .PanelHandler__Header__Icon__Mobile {
     display: inline-block;
   }
+
 }
