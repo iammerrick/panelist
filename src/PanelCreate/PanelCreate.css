@@ -8,6 +8,16 @@
   background-color: #BADA55;
 }
 
+.PanelCreate__Logout {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #FFF;
+  font-weight: bold;
+}
+
 .PanelCreate__Input {
   background-color: #FFF;
   display: flex;

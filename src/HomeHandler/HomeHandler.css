@@ -31,6 +31,7 @@
 
 .HomeHandler__Login {
   display: flex;
+  cursor: pointer;
   margin: auto;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #fff;

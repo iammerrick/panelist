@@ -15,7 +15,7 @@ class PanelCreate extends React.Component {
       topic: this.state.topic
     });
   }
-  
+
   handleChange(e) {
     this.setState({
       topic: e.target.value
@@ -33,6 +33,7 @@ class PanelCreate extends React.Component {
       <div className='PanelCreate'>
 
         <a href="/dashboard" className='PanelCreate__Link'>SEE ALL YOUR PANELS</a>
+        <a href="/logout" className='PanelCreate__Logout'>Logout</a>
         <div className='PanelCreate__Container'>
           <div className='PanelCreate__Instruction'>
           Enter a topic to discuss...
