@@ -1,4 +1,5 @@
 import React from 'react';
+import Firebase from '../utils/Firebase';
 import PanelActions from './PanelActions';
 import Observe from '../utils/Observe';
 import './CreateMessage.css';
@@ -37,15 +38,36 @@ class CreateMessage extends React.Component {
   }
 
   render() {
+    var self = this;
+
+    function hasMicrophone(user, panel) {
+      return panel.microphones[user];
+    }
+
+    function isDisabled() {
+      return self.props.store.isLocked || !hasMicrophone(Firebase.getAuth().uid, self.props.store);
+    }
+
+    var value = this.state.value;
+
+    if (!hasMicrophone(Firebase.getAuth().uid, self.props.store)) {
+      value = 'Only panelists are allowed to chat.'
+    }
+
+    if (this.props.store.isLocked) {
+      value = 'This panel has been locked by the facilitator.';
+    }
+
     var classes = cx({
       CreateMessage__Input: true,
-      'CreateMessage__Input--Locked': this.props.store.isLocked
-    })
+      'CreateMessage__Input--Locked': isDisabled()
+    });
+
     return (
       <div className='CreateMessage'>
         <div className={classes}>
-          <a className='CreateMessage__Submit' disabled={this.props.store.isLocked} onClick={this.handleSubmitClick.bind(this)}><i className={this.props.store.isLocked ? 'icon-lock' : 'icon-plus'} /></a>
-          <input readOnly={this.props.store.isLocked} onKeyUp={this.handleKeyUp.bind(this)} className='CreateMessage__Input__Textarea' onChange={this.handleChange.bind(this)} value={this.state.value}/>
+          <a className='CreateMessage__Submit' disabled={this.props.store.isLocked} onClick={this.handleSubmitClick.bind(this)}><i className={isDisabled() ? 'icon-lock' : 'icon-plus'} /></a>
+          <input readOnly={isDisabled()} onKeyUp={this.handleKeyUp.bind(this)} className='CreateMessage__Input__Textarea' onChange={this.handleChange.bind(this)} value={value}/>
         </div>
       </div>
     );

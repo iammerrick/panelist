@@ -88,7 +88,7 @@ class PanelHandler extends React.Component {
           </div>
           <div className='PanelHandler__Messages'>
             <Messages panelId={this.props.panelId} />
-            { hasMicrophone(Firebase.getAuth().uid, this.props.store) ? <CreateMessage panelId={this.props.panelId} /> : <div className='PanelHandler__Observer'>Well hello, casual observer, in order to comment you must be a panelist. Only the facilitator can assign panelists.</div>}
+            <CreateMessage panelId={this.props.panelId} />
           </div>
         </div>
       </div>
