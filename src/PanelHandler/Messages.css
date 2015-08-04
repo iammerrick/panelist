@@ -1,11 +1,11 @@
 .Message {
   padding: 8px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  position: relative;
 }
 
 .Message:hover .MessageMeta__RemoveIcon {
-  display: block;
+  display: inline-block;
+  padding-left: 4px;
 }
 
 .MessageMeta {
@@ -32,8 +32,5 @@
 
 .MessageMeta__RemoveIcon {
   cursor: pointer;
-  position: absolute;
-  right: 0;
-  top: 24px;
   display: none;
 }

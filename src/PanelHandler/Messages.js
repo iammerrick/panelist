@@ -13,7 +13,7 @@ class Messages extends React.Component {
     var node = React.findDOMNode(this);
     this.shouldScrollBottom = node.scrollTop + node.offsetHeight === node.scrollHeight;
   }
-  
+
   componentDidUpdate() {
     if (this.shouldScrollBottom) {
       var node = React.findDOMNode(this);
@@ -28,6 +28,7 @@ class Messages extends React.Component {
   render() {
     var uid = Firebase.getAuth().uid;
     var messages = _.map(this.props.store.messages, (message, key) => {
+      var canDelete = message.userId === uid && !this.props.store.isLocked;
       return (
         <div key={key} className='Message'>
           <div className='MessageMeta'>
@@ -36,7 +37,7 @@ class Messages extends React.Component {
             </div>
             <div className='MessageMeta__Timestamp'>
               <Moment timeStamp={message.timeStamp} />
-              { message.userId === uid ? <span className="MessageMeta__RemoveIcon" onClick={this.handleRemoveClick.bind(this, key)}><i className='icon-remove'></i></span> : null}
+              { canDelete ? <span className="MessageMeta__RemoveIcon" onClick={this.handleRemoveClick.bind(this, key)}><i className='icon-remove'></i></span> : null}
             </div>
           </div>
           <div className='Message__Source'>
