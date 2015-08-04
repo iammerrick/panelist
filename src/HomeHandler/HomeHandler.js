@@ -1,7 +1,12 @@
 import React from 'react';
 import './HomeHandler.css';
+import LoginActions from '../LoginHandler/LoginActions';
 
 class HomeHandler extends React.Component {
+  handleClick() {
+    LoginActions.twitter(this.props.redirect);
+  }
+
   render() {
     return(
       <div className='HomeHandler'>
@@ -9,7 +14,7 @@ class HomeHandler extends React.Component {
           <div className='HomeHandler__Title'>Panelist.io</div>
           <div className='HomeHandler__Description'>Create a panel for "off the cuff" discussions that are bigger than 140 characters.</div>
           <div className='HomeHandler__LoginContainer'>
-            <a href='/login' className='HomeHandler__Login'>
+            <a onClick={this.handleClick.bind(this)} className='HomeHandler__Login'>
               <div className='HomeHandler__Login__Icon'>
                 <i className='icon-twitter'></i>
               </div>
