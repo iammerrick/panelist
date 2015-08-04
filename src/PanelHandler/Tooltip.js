@@ -218,7 +218,6 @@ var Tooltip = React.createClass({
             HORIZONTAL_ALIGNMNENTS[this.props.horizontalAlign],
             VERTICAL_CORNERS[this.props.verticalPosition]
         );
-        console.log(settings);
 
         var arrowAbove;
         var arrowBelow;
