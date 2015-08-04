@@ -14,6 +14,7 @@ class Users extends React.Component {
 
   render() {
     var self = this;
+
     function isPanelist(userId) {
       return self.props.store.microphones[userId];
     }
@@ -32,7 +33,7 @@ class Users extends React.Component {
 
     return (
       <div className='Users'>
-        {users}
+        {users.length > 0 ? users : <div className='Users_Row'>No People</div>}
       </div>
     );
   }

@@ -46,7 +46,7 @@ class Messages extends React.Component {
         </div>
       );
     });
-    return <div className='Messages'>{messages}</div>
+    return <div className='Messages'>{messages.length > 0 ? messages : <div className='Messages__Helper'>Sure is quiet in here, try typing something below...</div>}</div>
   }
 }
 

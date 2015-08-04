@@ -22,8 +22,7 @@ function lock(route) {
 var routes = {
   '/': () => {
     var { redirect } = queryString.parse(window.location.search);
-    if (Firebase.getAuth()) return URL.redirect('/dashboard');
-    React.render(<AppHandler><HomeHandler redirect={redirect || '/dashboard'} /></AppHandler>, el);
+    React.render(<AppHandler><HomeHandler redirect={redirect || '/panel/create'} /></AppHandler>, el);
   },
   '/dashboard': lock(() => {
     React.render(<AppHandler><DashboardHandler /></AppHandler>, el);
