@@ -31,6 +31,8 @@
   border-top: 1px solid rgba(0,0,0,0.1);
   border-bottom: 1px solid rgba(0,0,0,0.1);
   padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .PanelHandler__Body {
@@ -67,8 +69,8 @@
 .PanelHandler .CreateMessage {
   position: absolute;
   bottom: 16px;
-  left: 24px;
-  right: 24px;
+  left: 8px;
+  right: 8px;
 }
 
 .PanelHandler .Messages {
@@ -76,7 +78,7 @@
   left: 24px;
   right: 24px;
   top: 60px;
-  bottom: 80px;
+  bottom: 96px;
   overflow: auto;
 }
 

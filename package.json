@@ -14,7 +14,8 @@
     "normalize.css": "^3.0.3",
     "query-string": "^2.4.0",
     "react": "^0.13.3",
-    "react-classset": "0.0.2"
+    "react-classset": "0.0.2",
+    "react-textarea-autosize": "^2.4.2"
   },
   "devDependencies": {
     "autoprefixer-loader": "^2.0.0",

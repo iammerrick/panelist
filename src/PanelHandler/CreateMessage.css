@@ -1,6 +1,8 @@
 .CreateMessage {
   display: flex;
   position: relative;
+  padding: 16px;
+  background-color: #FFF;
 }
 
 .CreateMessage__Input {
