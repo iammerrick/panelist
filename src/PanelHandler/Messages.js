@@ -8,6 +8,19 @@ import Moment from './Moment';
 import './Messages.css';
 
 class Messages extends React.Component {
+
+  componentWillUpdate() {
+    var node = React.findDOMNode(this);
+    this.shouldScrollBottom = node.scrollTop + node.offsetHeight === node.scrollHeight;
+  }
+  
+  componentDidUpdate() {
+    if (this.shouldScrollBottom) {
+      var node = React.findDOMNode(this);
+      node.scrollTop = node.scrollHeight
+    }
+  }
+
   handleRemoveClick(key) {
     PanelActions.removeMessage(this.props.panelId, key);
   }
@@ -32,7 +45,7 @@ class Messages extends React.Component {
         </div>
       );
     });
-    return <div>{messages}</div>
+    return <div className='Messages'>{messages}</div>
   }
 }
 
