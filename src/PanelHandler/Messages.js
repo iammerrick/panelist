@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'react-classset';
 import User from './User';
 import Observe from '../utils/Observe';
 import PanelActions from './PanelActions';
@@ -29,8 +30,12 @@ class Messages extends React.Component {
     var uid = Firebase.getAuth().uid;
     var messages = _.map(this.props.store.messages, (message, key) => {
       var canDelete = message.userId === uid && !this.props.store.isLocked;
+      var classes = cx({
+        'Message': true,
+        'Message--Event': message.type === 'EVENT'
+      });
       return (
-        <div key={key} className='Message'>
+        <div key={key} className={classes}>
           <div className='MessageMeta'>
             <div className='MessageMeta__Username'>
               <User panelId={this.props.panelId} userId={message.userId} />

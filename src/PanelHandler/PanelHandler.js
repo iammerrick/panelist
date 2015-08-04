@@ -1,7 +1,6 @@
 import React from 'react';
 import Firebase from '../utils/Firebase';
 import Observe from '../utils/Observe';
-import PresenceActions from './PresenceActions';
 import User from './User';
 import Users from './Users';
 import CreateMessage from './CreateMessage';
@@ -23,7 +22,7 @@ class PanelHandler extends React.Component {
   handleOnline(snapshot) {
    var status = snapshot.val();
     if (status) {
-      PresenceActions.addPresence(this.props.panelId, Firebase.getAuth().uid, status);
+      PanelActions.addPresence(this.props.panelId, Firebase.getAuth().uid, status);
     }
   }
 

@@ -1,9 +1,19 @@
 .Messages {
   position: relative;
 }
+
 .Message {
   padding: 8px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.Message--Event {
+  background-color: #FBFBFB;
+  padding: 16px;
+  margin: 16px;
+}
+
+.Message--Event .Message__Source {
+  font-style: italic;
 }
 
 .Message:hover .MessageMeta__RemoveIcon {
