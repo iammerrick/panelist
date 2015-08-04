@@ -63,3 +63,10 @@
 .PanelListItem:hover .PanelListItem__Remove {
   display: block;
 }
+
+@media(max-width: 720px) {
+  .PanelList {
+    min-width: auto;
+    width: 90%;
+  }
+}
