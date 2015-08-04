@@ -1,5 +1,6 @@
 import React from 'react';
 import Firebase from '../utils/Firebase';
+import cx from 'react-classset';
 import ProTip from './ProTip';
 import Observe from '../utils/Observe';
 import User from './User';
@@ -10,6 +11,13 @@ import PanelActions from './PanelActions';
 import './PanelHandler.css'
 
 class PanelHandler extends React.Component {
+
+  constructor() {
+    super(...arguments);
+    this.state = {
+      showMobile: false
+    };
+  }
 
   componentWillMount() {
     var online = Firebase.child('/.info/connected');
@@ -33,6 +41,12 @@ class PanelHandler extends React.Component {
     }
   }
 
+  handleMobileClick() {
+    this.setState({
+      showMobile: !this.state.showMobile
+    })
+  }
+
   handleShareIntent() {
     window.open(
       `https://twitter.com/intent/tweet?url=${window.location}&text=${this.props.store.topic}&via=panelistio`,
@@ -48,6 +62,10 @@ class PanelHandler extends React.Component {
     }
 
     var facilitator = this.props.store.facilitator;
+    var classes = cx({
+      'PanelHandler__Sidebar': true,
+      'PanelHandler__Sidebar__Mobile': this.state.showMobile
+    });
 
     var panelists = [];
     for (var key in this.props.store.microphones) {
@@ -59,7 +77,7 @@ class PanelHandler extends React.Component {
   var viewers = _.intersection(presence, _.xor(presence, panelists));
     return (
       <div className='PanelHandler'>
-        <div className='PanelHandler__Sidebar'>
+        <div className={classes}>
           <a href='/panel/create' className='PanelHandler__Create'>
             <i className='icon-plus'></i> <span className='PanelHandler__Create__Text'>Create a Panel</span>
           </a>
@@ -89,9 +107,9 @@ class PanelHandler extends React.Component {
         <div className='PanelHandler__Body'>
           <div className='PanelHandler__Header'>
             <div>
-              <a>Show Users</a>
-              <a onClick={this.handleShareIntent.bind(this)} className='PanelHandler__Header__FirstIcon'><i className='icon-twitter'></i></a>
-              <span className='PanelHandler__Header__SecondIcon' onClick={this.handleLockClick.bind(this)}>{this.props.store.isLocked ? <i className='icon-lock'></i> : <i className='icon-lock-open'></i>}</span>
+              <a onClick={this.handleShareIntent.bind(this)} className='PanelHandler__Header__Icon'><i className='icon-twitter'></i></a>
+              <span className='PanelHandler__Header__Icon' onClick={this.handleLockClick.bind(this)}>{this.props.store.isLocked ? <i className='icon-lock'></i> : <i className='icon-lock-open'></i>}</span>
+              <a onClick={this.handleMobileClick.bind(this)} className='PanelHandler__Header__Icon PanelHandler__Header__Icon__Mobile'><i className='icon-account-multiple'></i></a>
             </div>
             <div className='Topic'>
               {this.props.store.topic}

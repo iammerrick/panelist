@@ -45,13 +45,13 @@
   right: 0px;
 }
 
-.PanelHandler__Header__FirstIcon {
+.PanelHandler__Header__Icon {
   padding-right: 8px;
   cursor: pointer;
 }
 
-.PanelHandler__Header__SecondIcon {
-  cursor: pointer;
+.PanelHandler__Header__Icon__Mobile {
+  display: none;
 }
 
 .PanelHandler__Header {
@@ -115,7 +115,15 @@
     display: none;
   }
 
+  .PanelHandler__Sidebar__Mobile {
+    display: block;
+  }
+
   .PanelHandler__Body {
     left: 0;
+  }
+
+  .PanelHandler__Header__Icon__Mobile {
+    display: inline-block;
   }
 }
