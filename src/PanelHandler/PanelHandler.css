@@ -105,6 +105,13 @@
   }
 
   .PanelHandler__Sidebar {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
     display: none;
   }
 

@@ -89,6 +89,7 @@ class PanelHandler extends React.Component {
         <div className='PanelHandler__Body'>
           <div className='PanelHandler__Header'>
             <div>
+              <a>Show Users</a>
               <a onClick={this.handleShareIntent.bind(this)} className='PanelHandler__Header__FirstIcon'><i className='icon-twitter'></i></a>
               <span className='PanelHandler__Header__SecondIcon' onClick={this.handleLockClick.bind(this)}>{this.props.store.isLocked ? <i className='icon-lock'></i> : <i className='icon-lock-open'></i>}</span>
             </div>
