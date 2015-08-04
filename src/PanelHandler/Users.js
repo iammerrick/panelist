@@ -13,8 +13,21 @@ class Users extends React.Component {
   }
 
   render() {
+    var self = this;
+    function isPanelist(userId) {
+      return self.props.store.microphones[userId];
+    }
+
+    function toggler(userId) {
+      return isPanelist(userId) ? <i className='icon-remove Users__IconRemove'/> : <i className='icon-plus Users__IconPlus'/>;
+    }
+
     var users = this.props.userIds.map((id) => {
-      return <div onClick={this.handleUserClick.bind(this, id)} key={id}><User userId={id} /></div>;
+      return (
+        <div className='UserContainer' onClick={this.handleUserClick.bind(this, id)} key={id}>
+          <User userId={id} />{this.props.store.facilitator === Firebase.getAuth().uid ? toggler(id) : null}
+        </div>
+      )
     });
 
     return (

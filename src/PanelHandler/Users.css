@@ -1,3 +1,26 @@
 .Users {
   padding: 8px 16px;
 }
+
+.UserContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.UserContainer:hover .Users__IconRemove {
+  display: block;
+}
+
+.UserContainer:hover .Users__IconPlus {
+  display: block;
+}
+
+.Users__IconRemove {
+  display: none;
+}
+
+.Users__IconPlus {
+  display: none;
+}
