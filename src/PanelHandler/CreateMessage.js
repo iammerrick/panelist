@@ -29,8 +29,6 @@ class CreateMessage extends React.Component {
         });
       } else {
         PanelActions.createEvent(this.props.panelId, Firebase.getAuth().uid, this.state.value.replace(/^\/me /, ''));
-
-
       }
     }
 
