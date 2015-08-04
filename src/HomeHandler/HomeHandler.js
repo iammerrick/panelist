@@ -1,6 +1,7 @@
 import React from 'react';
 import './HomeHandler.css';
 import LoginActions from '../LoginHandler/LoginActions';
+import Screenshot from './screen.png';
 
 class HomeHandler extends React.Component {
   handleClick() {
@@ -20,6 +21,9 @@ class HomeHandler extends React.Component {
               </div>
               <div className='HomeHandler__Login__Text'>Login With Twitter</div>
             </a>
+          </div>
+          <div className='HomeHandler__ImageContainer'>
+            <img className='HomeHandler__Image' src={Screenshot}/>
           </div>
         </div>
       </div>
