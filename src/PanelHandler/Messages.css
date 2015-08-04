@@ -1,3 +1,6 @@
+.Messages {
+  position: relative;
+}
 .Message {
   padding: 8px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -33,4 +36,10 @@
 .MessageMeta__RemoveIcon {
   cursor: pointer;
   display: none;
+}
+
+.Messages__Helper {
+  position: absolute;
+  bottom: 0;
+  color: #999;
 }
