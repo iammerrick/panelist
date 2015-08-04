@@ -15,8 +15,8 @@ var configuration =  {
         exclude: /(node_modules)/,
         loader: 'babel'
       },
-      { test: /\.css$/, loader: 'style-loader!css-loader' },
-      {test: /\.png$/, loader: 'file-loader?name=[path][name].[ext]'}
+      {test: /\.png$/, loader: 'file-loader?name=[path][name].[ext]'},
+      { test: /\.css$/, loader: 'style-loader!css-loader!autoprefixer-loader?browsers=last 2 versions' }
     ]
   }
 };
