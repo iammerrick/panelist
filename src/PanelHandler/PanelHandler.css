@@ -86,3 +86,11 @@
   left: 16px;
 
 }
+.PanelHandler__Dashboard {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-size: 11px;
+  color: #999;
+  text-decoration: none;
+}
