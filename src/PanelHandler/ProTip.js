@@ -20,7 +20,7 @@ class ProTip extends React.Component {
     return (
       <div className='ProTip' show={this.state.show} onClick={this.handleClick.bind(this)}>
         <Tooltip className='ProTip__Tip' show={this.state.show}>
-          <i className='icon-information' />
+          <i className='icon-information ProTip__Icon' />
           <div>{this.props.children}</div>
         </Tooltip>
       </div>
