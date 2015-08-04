@@ -14,7 +14,7 @@ class Users extends React.Component {
 
   render() {
     var users = this.props.userIds.map((id) => {
-      return <div onClick={this.handleUserClick.bind(this, id)} key={id}><User userId={id} /></div>;
+      return <div className='Users__Row' onClick={this.handleUserClick.bind(this, id)} key={id}><User userId={id} /></div>;
     });
 
     return (

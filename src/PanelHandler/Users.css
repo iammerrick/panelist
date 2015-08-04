@@ -1,3 +1,7 @@
 .Users {
   padding: 8px 16px;
 }
+
+.Users__Row {
+  padding: 8px 0;
+}

@@ -79,3 +79,10 @@
   bottom: 80px;
   overflow: auto;
 }
+
+.PanelHandler__Observer {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+
+}

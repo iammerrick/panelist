@@ -80,7 +80,7 @@ class PanelHandler extends React.Component {
           <div className='PanelHandler__Header'>
             <div>
               <a onClick={this.handleShareIntent.bind(this)} className='PanelHandler__Header__FirstIcon'><i className='icon-twitter'></i></a>
-              <span className="PanelHandler__Header__SecondIcon" onClick={this.handleLockClick.bind(this)}>{this.props.store.isLocked ? <i className='icon-lock'></i> : <i className='icon-lock-open'></i>}</span>
+              <span className='PanelHandler__Header__SecondIcon' onClick={this.handleLockClick.bind(this)}>{this.props.store.isLocked ? <i className='icon-lock'></i> : <i className='icon-lock-open'></i>}</span>
             </div>
             <div className='Topic'>
               {this.props.store.topic}
@@ -88,7 +88,7 @@ class PanelHandler extends React.Component {
           </div>
           <div className='PanelHandler__Messages'>
             <Messages panelId={this.props.panelId} />
-            { hasMicrophone(Firebase.getAuth().uid, this.props.store) ? <CreateMessage panelId={this.props.panelId} /> : null }
+            { hasMicrophone(Firebase.getAuth().uid, this.props.store) ? <CreateMessage panelId={this.props.panelId} /> : <div className='PanelHandler__Observer'>Well hello, casual observer, in order to comment you must be a panelist.</div>}
           </div>
         </div>
       </div>
