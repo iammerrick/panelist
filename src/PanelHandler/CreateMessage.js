@@ -1,6 +1,7 @@
 import React from 'react';
 import Firebase from '../utils/Firebase';
 import PanelActions from './PanelActions';
+import TextArea from 'react-textarea-autosize';
 import Observe from '../utils/Observe';
 import './CreateMessage.css';
 import cx from 'react-classset';
@@ -67,7 +68,7 @@ class CreateMessage extends React.Component {
       <div className='CreateMessage'>
         <div className={classes}>
           <a className='CreateMessage__Submit' disabled={this.props.store.isLocked} onClick={this.handleSubmitClick.bind(this)}><i className={isDisabled() ? 'icon-lock' : 'icon-plus'} /></a>
-          <textarea readOnly={isDisabled()} onKeyUp={this.handleKeyUp.bind(this)} className='CreateMessage__Input__Textarea' onChange={this.handleChange.bind(this)} value={value}/>
+          <TextArea readOnly={isDisabled()} onKeyUp={this.handleKeyUp.bind(this)} className='CreateMessage__Input__Textarea' onChange={this.handleChange.bind(this)} value={value}/>
         </div>
       </div>
     );

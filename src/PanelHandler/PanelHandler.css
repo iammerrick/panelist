@@ -69,8 +69,8 @@
 .PanelHandler .CreateMessage {
   position: absolute;
   bottom: 16px;
-  left: 24px;
-  right: 24px;
+  left: 8px;
+  right: 8px;
 }
 
 .PanelHandler .Messages {
@@ -78,7 +78,7 @@
   left: 24px;
   right: 24px;
   top: 60px;
-  bottom: 80px;
+  bottom: 96px;
   overflow: auto;
 }
 
