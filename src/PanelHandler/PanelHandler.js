@@ -1,5 +1,6 @@
 import React from 'react';
 import Firebase from '../utils/Firebase';
+import ProTip from './ProTip';
 import Observe from '../utils/Observe';
 import User from './User';
 import Users from './Users';
@@ -63,15 +64,24 @@ class PanelHandler extends React.Component {
             <i className='icon-plus'></i> <span className='PanelHandler__Create__Text'>Create a Panel</span>
           </a>
           <div className='PanelHandler__Title'>
-            Facilitator
+            <div>
+              Facilitator
+            </div>
+            <ProTip>The facilitator is running the show, he promotes viewers to panelists and locks the conversation.</ProTip>
           </div>
           <Users userIds={[facilitator]} panelId={this.props.panelId} />
           <div className='PanelHandler__Title'>
-            Panelists ({panelists.length})
+            <div>
+              Panelists ({panelists.length})
+            </div>
+            <ProTip>A panelist is someone with a microphone. They are permitted to engage in the conversation.</ProTip>
           </div>
           <Users userIds={panelists} panelId={this.props.panelId} />
           <div className='PanelHandler__Title'>
-            Viewers ({viewers.length})
+            <div>
+              Viewers ({viewers.length})
+            </div>
+            <ProTip>A viewer is an observer of the conversation. They aren't able to engage in the conversation unless they are promoted to a panelist by the facilitator.</ProTip>
           </div>
           <Users userIds={viewers} panelId={this.props.panelId} />
           <a href='/dashboard' className='PanelHandler__Dashboard'>See all your panels...</a>
