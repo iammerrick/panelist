@@ -1,5 +1,4 @@
 .HomeHandler {
-  background-color: #BADA55;
   position: absolute;
   top: 0;
   right: 0;
@@ -9,7 +8,7 @@
   display: flex;
   justify-content: center;
   font: 14px 'Source Sans Pro';
-  background: url(./Screenshot.png) no-repeat bottom center;
+  background: #BADA55 url(./screen.png) no-repeat center 250px;
 }
 
 .HomeHandler__Title {

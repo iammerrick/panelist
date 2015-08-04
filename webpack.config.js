@@ -6,7 +6,8 @@ var configuration =  {
   entry: './src/main.js',
   output: {
     path: './built/',
-    filename: '[name].js'
+    filename: '[name].js',
+    publicPath: '/built/'
   },
   module: {
     loaders: [
@@ -15,7 +16,7 @@ var configuration =  {
         exclude: /(node_modules)/,
         loader: 'babel'
       },
-      {test: /\.png$/, loader: 'file-loader?name=[path][name].[ext]'},
+      { test: /\.png$/, loader: 'file-loader' },
       { test: /\.css$/, loader: 'style-loader!css-loader!autoprefixer-loader?browsers=last 2 versions' }
     ]
   }
