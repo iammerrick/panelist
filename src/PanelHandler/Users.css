@@ -24,3 +24,12 @@
 .Users__IconPlus {
   display: none;
 }
+
+@media(max-width: 720px) {
+    .Users__IconPlus {
+      display: block;
+    }
+    .Users__IconRemove {
+      display: block;
+    }
+}
