@@ -13,7 +13,6 @@ class DashboardHandler extends React.Component {
     return (
       <div className='DashboardHandler'>
         <a href="/logout" className='DashboardHandler__Logout'>Logout</a>
-  
         <div className='PanelList'>
           {list}
           <a href='/panel/create' className='DashboardHandler__Create'><i className='icon-plus DashboardHandler__Create__Icon' /> Create Panel</a>

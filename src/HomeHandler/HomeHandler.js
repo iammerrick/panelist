@@ -1,10 +1,22 @@
 import React from 'react';
+import './HomeHandler.css';
 
 class HomeHandler extends React.Component {
   render() {
     return(
-      <div>
-        <a href="/login">Login</a>
+      <div className='HomeHandler'>
+        <div className='HomeHandler__Info'>
+          <div className='HomeHandler__Title'>Panelist.io</div>
+          <div className='HomeHandler__Description'>Create a panel for "off the cuff" discussions that are bigger than 140 characters.</div>
+          <div className='HomeHandler__LoginContainer'>
+            <a href='/login' className='HomeHandler__Login'>
+              <div className='HomeHandler__Login__Icon'>
+                <i className='icon-twitter'></i>
+              </div>
+              <div className='HomeHandler__Login__Text'>Login With Twitter</div>
+            </a>
+          </div>
+        </div>
       </div>
     );
   }

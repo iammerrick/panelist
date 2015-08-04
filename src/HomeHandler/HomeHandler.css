@@ -1,0 +1,48 @@
+.HomeHandler {
+  background-color: #BADA55;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  font: 14px 'Source Sans Pro';
+  background: url(./Screenshot.png) no-repeat bottom center;
+}
+
+.HomeHandler__Title {
+  text-align: center;
+  font-weight: normal;
+  font-size: 36px;
+}
+
+.HomeHandler__Description {
+  font-size: 16px;
+}
+
+.HomeHandler__LoginContainer {
+  display: flex;
+  padding: 16px 0;
+}
+
+.HomeHandler__Login {
+  display: flex;
+  margin: auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: #333;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.HomeHandler__Login__Text {
+  padding: 16px;
+}
+
+.HomeHandler__Login__Icon {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 16px;
+}

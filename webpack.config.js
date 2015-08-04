@@ -15,7 +15,8 @@ var configuration =  {
         exclude: /(node_modules)/,
         loader: 'babel'
       },
-      { test: /\.css$/, loader: 'style-loader!css-loader' }
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      {test: /\.png$/, loader: 'file-loader?name=[path][name].[ext]'}
     ]
   }
 };
