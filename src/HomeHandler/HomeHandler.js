@@ -1,7 +1,7 @@
 import React from 'react';
 import './HomeHandler.css';
 import LoginActions from '../LoginHandler/LoginActions';
-import Screenshot from './screen.png';
+import Flow from './flow.gif';
 
 class HomeHandler extends React.Component {
   handleClick() {
@@ -23,7 +23,7 @@ class HomeHandler extends React.Component {
             </a>
           </div>
           <div className='HomeHandler__ImageContainer'>
-            <img className='HomeHandler__Image' src={Screenshot}/>
+            <img className='HomeHandler__Image' src={Flow}/>
           </div>
         </div>
       </div>
