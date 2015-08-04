@@ -106,11 +106,6 @@
 }
 
 @media(max-width: 720px) {
-  .PanelCreate__Container {
-    width: 100%;
-    padding: 0 32px;
-    min-width: auto;
-  }
 
   .PanelHandler__Sidebar {
     display: block;

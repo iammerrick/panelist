@@ -59,3 +59,12 @@
   left: 16px;
   top: 16px;
 }
+
+@media(max-width: 720px) {
+  .PanelCreate__Container {
+    min-width: inherit;
+    width: 100%;
+    padding: 0 32px;
+    box-sizing: border-box;
+  }
+}
