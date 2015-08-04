@@ -8,7 +8,7 @@
 }
 
 .PanelHandler__Sidebar {
-  flex-basis: 360px;
+  flex-basis: 280px;
   background-color: #F9F9F9;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -34,10 +34,10 @@
 }
 
 .PanelHandler__Body {
-  padding: 16px;
+  padding: 16px 24px;
   flex: 1;
   position: absolute;
-  left: 360px;
+  left: 280px;
   top: 0px;
   bottom: 0px;
   right: 0px;
@@ -67,14 +67,14 @@
 .PanelHandler .CreateMessage {
   position: absolute;
   bottom: 16px;
-  left: 16px;
-  right: 16px;
+  left: 24px;
+  right: 24px;
 }
 
 .PanelHandler .Messages {
   position: absolute;
-  left: 16px;
-  right: 16px;
+  left: 24px;
+  right: 24px;
   top: 60px;
   bottom: 80px;
   overflow: auto;
