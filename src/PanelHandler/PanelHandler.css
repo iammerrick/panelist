@@ -159,4 +159,9 @@
     display: inline-block;
   }
 
+  .PanelHandler__Dashboard {
+    width: 100%;
+    bottom: auto;
+  }
+
 }
