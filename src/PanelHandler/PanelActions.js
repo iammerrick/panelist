@@ -47,9 +47,8 @@ export default {
   },
 
   createEvent(panel, user, event) {
-    
     Firebase.child(`panels/${panel}`).once('value', (snapshot) => {
-      if (snapshot.val().isLocked) return  null;
+      if (snapshot.val().isLocked && event !== 'This panel has been unlocked.') return  null;
       Firebase.child(`panels/${panel}/messages`).push({
         source: event,
         userId: user,
