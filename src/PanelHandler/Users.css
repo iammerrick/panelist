@@ -2,18 +2,19 @@
   padding: 8px 16px;
 }
 
-.UserContainer {
+.Users__Row {
+  padding: 8px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
 }
 
-.UserContainer:hover .Users__IconRemove {
+.Users__Row:hover .Users__IconRemove {
   display: block;
 }
 
-.UserContainer:hover .Users__IconPlus {
+.Users__Row:hover .Users__IconPlus {
   display: block;
 }
 
