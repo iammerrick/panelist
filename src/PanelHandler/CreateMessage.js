@@ -67,7 +67,7 @@ class CreateMessage extends React.Component {
       <div className='CreateMessage'>
         <div className={classes}>
           <a className='CreateMessage__Submit' disabled={this.props.store.isLocked} onClick={this.handleSubmitClick.bind(this)}><i className={isDisabled() ? 'icon-lock' : 'icon-plus'} /></a>
-          <input readOnly={isDisabled()} onKeyUp={this.handleKeyUp.bind(this)} className='CreateMessage__Input__Textarea' onChange={this.handleChange.bind(this)} value={value}/>
+          <textarea readOnly={isDisabled()} onKeyUp={this.handleKeyUp.bind(this)} className='CreateMessage__Input__Textarea' onChange={this.handleChange.bind(this)} value={value}/>
         </div>
       </div>
     );
