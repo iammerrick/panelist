@@ -106,6 +106,18 @@
   color: #FFF;
 }
 
+.PanelHandler__Share__InputContainer {
+  padding: 8px;
+}
+
+.PanelHandler__Share__Input {
+  background-color: #ECECEC; 
+  padding: 8px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
 @media(max-width: 720px) {
 
   .PanelHandler__Sidebar {

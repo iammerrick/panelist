@@ -23,12 +23,16 @@ class CreateMessage extends React.Component {
   handleSubmitClick() {
     if(this.state.value.replace(/\s/g, '').length) {
       var matches = this.state.value.match(/^\/me /);
-      if (matches === null) {
+      var lock = this.state.value.match(/^\/lock/);
+
+      if (matches !== null) {
+        PanelActions.createEvent(this.props.panelId, Firebase.getAuth().uid, this.state.value.replace(/^\/me /, ''));
+      } else if(lock !== null) {
+        PanelActions.setLocked(this.props.panelId, true);
+      } else {
         PanelActions.create(this.props.panelId, {
           source: this.state.value
         });
-      } else {
-        PanelActions.createEvent(this.props.panelId, Firebase.getAuth().uid, this.state.value.replace(/^\/me /, ''));
       }
     }
 

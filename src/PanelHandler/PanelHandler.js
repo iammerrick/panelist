@@ -85,6 +85,14 @@ class PanelHandler extends React.Component {
           </a>
           <a onClick={this.handleMobileClick.bind(this)} className='PanelHandler__Mobile__Close'><i className='icon-remove' /></a>
           <div className='PanelHandler__Title'>
+            <div>Share This Panel</div>
+            <div><a onClick={this.handleShareIntent.bind(this)}><i className='icon-twitter'></i></a></div>
+          
+          </div>
+          <div className='PanelHandler__Share__InputContainer'>
+            <input readOnly={true} value={window.location} className='PanelHandler__Share__Input' />
+          </div>
+          <div className='PanelHandler__Title'>
             <div>
               Facilitator
             </div>
@@ -110,7 +118,6 @@ class PanelHandler extends React.Component {
         <div className='PanelHandler__Body'>
           <div className='PanelHandler__Header'>
             <div>
-              <a onClick={this.handleShareIntent.bind(this)} className='PanelHandler__Header__Icon'><i className='icon-twitter'></i></a>
               <span className='PanelHandler__Header__Icon' onClick={this.handleLockClick.bind(this)}>{this.props.store.isLocked ? <i className='icon-lock'></i> : <i className='icon-lock-open'></i>}</span>
               <a onClick={this.handleMobileClick.bind(this)} className='PanelHandler__Header__Icon PanelHandler__Header__Icon__Mobile'><i className='icon-account-multiple'></i></a>
             </div>
