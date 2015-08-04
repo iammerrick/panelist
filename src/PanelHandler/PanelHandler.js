@@ -56,7 +56,6 @@ class PanelHandler extends React.Component {
       }
     }
    var viewers = _.xor(_.keys(this.props.store.presence), panelists);
-
     return (
       <div className='PanelHandler'>
         <div className='PanelHandler__Sidebar'>
@@ -68,11 +67,11 @@ class PanelHandler extends React.Component {
           </div>
           <Users userIds={[facilitator]} panelId={this.props.panelId} />
           <div className='PanelHandler__Title'>
-            Panelists
+            Panelists ({panelists.length})
           </div>
           <Users userIds={panelists} panelId={this.props.panelId} />
           <div className='PanelHandler__Title'>
-            Viewers
+            Viewers ({viewers.length})
           </div>
           <Users userIds={viewers} panelId={this.props.panelId} />
         </div>
