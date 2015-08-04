@@ -19,7 +19,7 @@ class ProTip extends React.Component {
   render() {
     return (
       <div className='ProTip' show={this.state.show} onClick={this.handleClick.bind(this)}>
-        <Tooltip className='ProTip__Tip' show={this.state.show}>
+        <Tooltip horizontalAlign='right' className='ProTip__Tip' show={this.state.show}>
           <i className='icon-information ProTip__Icon' />
           <div>{this.props.children}</div>
         </Tooltip>
