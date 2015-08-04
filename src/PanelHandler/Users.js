@@ -25,7 +25,7 @@ class Users extends React.Component {
     var users = this.props.userIds.map((id) => {
       return (
         <div className='Users__Row' style={{cursor: this.props.store.facilitator === Firebase.getAuth().uid ? 'pointer' : 'default'}} onClick={this.handleUserClick.bind(this, id)} key={id}>
-          <User userId={id} />{this.props.store.facilitator === Firebase.getAuth().uid ? toggler(id) : null}
+          <User onlineIndicator={true} userId={id} panelId={this.props.panelId} />{this.props.store.facilitator === Firebase.getAuth().uid ? toggler(id) : null}
         </div>
       )
     });

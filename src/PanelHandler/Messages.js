@@ -33,7 +33,7 @@ class Messages extends React.Component {
         <div key={key} className='Message'>
           <div className='MessageMeta'>
             <div className='MessageMeta__Username'>
-              <User userId={message.userId} />
+              <User panelId={this.props.panelId} userId={message.userId} />
             </div>
             <div className='MessageMeta__Timestamp'>
               <Moment timeStamp={message.timeStamp} />

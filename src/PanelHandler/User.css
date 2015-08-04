@@ -3,6 +3,16 @@
   align-items: center;
 }
 
+.User__Avatar {
+  position: relative;
+}
+
+.OnlineNugget {
+  position: absolute;
+  top: 0;
+  right: 4px;
+}
+
 .User__Image {
   border-radius: 50%;
   width: 24px;
@@ -10,6 +20,3 @@
   padding-right: 8px;
 }
 
-.User__Name {
-
-}
