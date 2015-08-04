@@ -18,10 +18,10 @@
   display: block;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   padding: 16px;
-}
-
-.CreateMessage__Submit:hover {
   cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .CreateMessage__Input__Textarea {
