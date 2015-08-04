@@ -2,6 +2,10 @@ import Firebase from '../utils/Firebase';
 import FB from 'firebase';
 
 export default {
+  remove(panel) {
+    Firebase.child('panels').child(panel).remove();
+  },
+
   create(id, payload) {
     Firebase.child('panels').child(id).child('messages').push({
       source: payload.source,

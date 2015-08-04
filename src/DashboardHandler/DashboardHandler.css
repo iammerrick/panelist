@@ -50,3 +50,16 @@
   color: #FFF;
   text-decoration: none;
 }
+
+.PanelListItem__Items {
+  display: flex;
+  align-items: center;
+}
+
+.PanelListItem .PanelListItem__Remove {
+  display: none;
+}
+
+.PanelListItem:hover .PanelListItem__Remove {
+  display: block;
+}
