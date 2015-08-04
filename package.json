@@ -11,6 +11,7 @@
     "flux": "^2.0.3",
     "lodash": "^3.10.0",
     "moment": "^2.10.6",
+    "normalize.css": "^3.0.3",
     "query-string": "^2.4.0",
     "react": "^0.13.3",
     "react-classset": "0.0.2"
