@@ -21,7 +21,7 @@ class PanelHandler extends React.Component {
   }
 
   handleOnline(snapshot) {
-    var status = snapshot.val();
+   var status = snapshot.val();
     if (status) {
       PresenceActions.addPresence(this.props.panelId, Firebase.getAuth().uid, status);
     }
@@ -55,7 +55,8 @@ class PanelHandler extends React.Component {
         panelists.push(key);
       }
     }
-   var viewers = _.xor(_.keys(this.props.store.presence), panelists);
+  var presence = _.keys(this.props.store.presence);
+  var viewers = _.intersection(presence, _.xor(presence, panelists));
     return (
       <div className='PanelHandler'>
         <div className='PanelHandler__Sidebar'>
