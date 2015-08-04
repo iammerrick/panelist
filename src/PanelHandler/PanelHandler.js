@@ -41,7 +41,9 @@ class PanelHandler extends React.Component {
     }
   }
 
-  handleMobileClick() {
+  handleMobileClick(e) {
+    e.preventDefault();
+
     this.setState({
       showMobile: !this.state.showMobile
     })
@@ -81,6 +83,7 @@ class PanelHandler extends React.Component {
           <a href='/panel/create' className='PanelHandler__Create'>
             <i className='icon-plus'></i> <span className='PanelHandler__Create__Text'>Create a Panel</span>
           </a>
+          <a onClick={this.handleMobileClick.bind(this)} className='PanelHandler__Mobile__Close'><i className='icon-remove' /></a>
           <div className='PanelHandler__Title'>
             <div>
               Facilitator

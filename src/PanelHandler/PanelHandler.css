@@ -97,6 +97,14 @@
   text-decoration: none;
 }
 
+.PanelHandler__Mobile__Close {
+  display: none;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: #FFF;
+}
+
 @media(max-width: 720px) {
   .PanelCreate__Container {
     width: 100%;
@@ -116,6 +124,10 @@
   }
 
   .PanelHandler__Sidebar__Mobile {
+    display: block;
+  }
+
+  .PanelHandler__Mobile__Close{
     display: block;
   }
 
