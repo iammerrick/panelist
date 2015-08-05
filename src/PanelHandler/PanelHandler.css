@@ -21,7 +21,6 @@
   width: 280px;
   background-color: #F9F9F9;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-  overflow: auto;
 }
 
 .PanelHandler__Header {
