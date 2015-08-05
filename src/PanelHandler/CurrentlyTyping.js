@@ -1,6 +1,7 @@
 import React from 'react';
 import Observe from '../utils/Observe';
 import Username from './Username';
+import './CurrentlyTyping.css';
 
 class CurrentlyTyping extends React.Component {
   render() {
@@ -14,7 +15,7 @@ class CurrentlyTyping extends React.Component {
 
     var users = _.map(isTyping, (user, key) => {
       return (
-        <span key={key}><Username userId={key} /> is typing...</span>
+        <span key={key} className='CurrentlyTyping__Item'><Username userId={key} /> is typing...</span>
       );
     });
     return <div>{users}</div>;
