@@ -86,19 +86,6 @@
   left: 16px;
 
 }
-.PanelHandler__Dashboard {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  font-size: 11px;
-  color: #333;
-  text-decoration: none;
-  background-color: #ECECEC;
-  width: 264px;
-  padding: 8px 0 8px 16px;
-  cursor: pointer;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
 
 .PanelHandler__Share__InputContainer {
   padding: 8px;
@@ -111,4 +98,3 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
-
