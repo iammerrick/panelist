@@ -20,8 +20,5 @@ export default (message) => {
     message = updateHaystack(message, emoji);
   });
 
-  console.log(message);
-
   return message;
 }
-

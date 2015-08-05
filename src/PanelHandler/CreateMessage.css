@@ -37,3 +37,19 @@
 .CreateMessage__Input--Locked {
   background-color: #ECECEC;
 }
+
+.CreateMessage__EmojiPicker {
+  font-size: 16px;
+  padding-right: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  position: relative;
+}
+
+.CreateMessage__EmojiPicker__Tooltip {
+  display: block;
+}
+
+.CreateMessage__EmojiPicker--Display {
+  display: none;
+}

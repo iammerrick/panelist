@@ -110,7 +110,6 @@ class PanelHandler extends React.Component {
             <ProTip>A viewer is an observer of the conversation. They aren't able to engage in the conversation unless they are promoted to a panelist by the facilitator.</ProTip>
           </div>
           <Users userIds={viewers} panelId={this.props.panelId} />
-          <a href='/dashboard' className='PanelHandler__Dashboard'>See all your panels...</a>
         </div>
         <div className='PanelHandler__Body'>
           <div className='PanelHandler__Header'>
