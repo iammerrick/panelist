@@ -127,8 +127,8 @@ class PanelHandler extends React.Component {
           </div>
           <div className='PanelHandler__Messages'>
             <Messages panelId={this.props.panelId} />
-            <CreateMessage panelId={this.props.panelId} />
           </div>
+          <CreateMessage panelId={this.props.panelId} />
         </div>
       </div>
     );
