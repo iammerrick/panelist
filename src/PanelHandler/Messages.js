@@ -7,6 +7,7 @@ import Firebase from '../utils/Firebase';
 import _ from 'lodash';
 import Moment from './Moment';
 import './Messages.css';
+import MessageParser from './MessageParser';
 
 class Messages extends React.Component {
 
@@ -50,9 +51,7 @@ class Messages extends React.Component {
               { canDelete ? <span className="MessageMeta__RemoveIcon" onClick={this.handleRemoveClick.bind(this, key)}><i className='icon-remove'></i></span> : null}
             </div>
           </div>
-          <div className='Message__Source'>
-            {message.source}
-          </div>
+          <div className='Message__Source' dangerouslySetInnerHTML={{ __html: MessageParser(message.source)}} />
         </div>
       );
     });

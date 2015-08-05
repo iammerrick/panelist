@@ -50,14 +50,19 @@ class CreateMessage extends React.Component {
   }
 
   handleKeyUp(e) {
-    if (e.keyCode === 13 && !this.props.store.isLocked) {
-      this.handleSubmitClick();
-    }
 
     if (this.state.value) {
       PanelActions.startTyping(this.props.panelId);
     } else {
       PanelActions.stopTyping(this.props.panelId);
+    }
+
+  }
+
+  handleKeyDown(e) {
+    if (e.keyCode === 13 && !this.props.store.isLocked) {
+      this.handleSubmitClick();
+      e.preventDefault();
     }
   }
 
@@ -96,7 +101,7 @@ class CreateMessage extends React.Component {
       <div className='CreateMessage'>
         <div className={classes}>
           <a className='CreateMessage__Submit' disabled={this.props.store.isLocked} onClick={this.handleSubmitClick.bind(this)}><i className={isDisabled() ? 'icon-lock' : 'icon-plus'} /></a>
-          <TextArea readOnly={isDisabled()} onKeyUp={this.handleKeyUp.bind(this)} className='CreateMessage__Input__Textarea' onChange={this.handleChange.bind(this)} value={value}/>
+          <TextArea readOnly={isDisabled()} onKeyDown={this.handleKeyDown.bind(this)} onKeyUp={this.handleKeyUp.bind(this)} className='CreateMessage__Input__Textarea' onChange={this.handleChange.bind(this)} value={value}/>
           <a onClick={this.handleEmojiClick.bind(this)} className='CreateMessage__EmojiPicker'>
             <Emoji className={emojiClasses} />
             <i className='icon-emoticon-happy'></i>

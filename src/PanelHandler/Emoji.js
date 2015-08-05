@@ -11,7 +11,7 @@ class Emoji extends React.Component {
           <span className='emoji emoji-smiley'></span>
           <span className='emoji emoji-heart'></span>
           <span className='emoji emoji-disappointed'></span>
-          <span className='emoji emoji-tongue-out'></span>
+          <span className='emoji emoji-tongue'></span>
           <span className='emoji emoji-wink'></span>
           <span className='emoji emoji-cool'></span>
           <span className='emoji emoji-poop'></span>
