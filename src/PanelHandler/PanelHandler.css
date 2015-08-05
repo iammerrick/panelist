@@ -36,6 +36,13 @@
   align-items: center;
 }
 
+.PanelHandler__CreateMessage {
+  position: absolute;
+  bottom: 16px;
+  left: 8px;
+  right: 8px;
+}
+
 .icon-twitter {
   cursor: pointer;
 }
@@ -76,13 +83,6 @@
 
 .Topic {
   font-size: 16px;
-}
-
-.PanelHandler .CreateMessage {
-  position: absolute;
-  bottom: 16px;
-  left: 8px;
-  right: 8px;
 }
 
 .PanelHandler__Messages {
