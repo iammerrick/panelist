@@ -22,7 +22,7 @@ function lock(route) {
 var routes = {
   '/': () => {
     var { redirect } = queryString.parse(window.location.search);
-    React.render(<AppHandler><HomeHandler redirect={redirect || '/panel/create'} /></AppHandler>, el);
+    React.render(<HomeHandler redirect={redirect || '/panel/create'} />, el);
   },
   '/dashboard': lock(() => {
     React.render(<AppHandler><DashboardHandler /></AppHandler>, el);
