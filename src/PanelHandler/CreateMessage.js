@@ -22,6 +22,15 @@ class CreateMessage extends React.Component {
     });
   }
 
+  handleEmojiSelect(emoji) {
+    var cursor = React.findDOMNode(this.refs.input).selectionStart;
+    var output = [this.state.value.slice(0, cursor), `:${emoji}:`, this.state.value.slice(cursor)].join('');
+
+    this.setState({
+      value: output
+    });
+  }
+
   handleEmojiClick() {
     this.setState({
       isEmoji: !this.state.isEmoji
@@ -101,9 +110,9 @@ class CreateMessage extends React.Component {
       <div className='CreateMessage'>
         <div className={classes}>
           <a className='CreateMessage__Submit' disabled={this.props.store.isLocked} onClick={this.handleSubmitClick.bind(this)}><i className={isDisabled() ? 'icon-lock' : 'icon-plus'} /></a>
-          <TextArea readOnly={isDisabled()} onKeyDown={this.handleKeyDown.bind(this)} onKeyUp={this.handleKeyUp.bind(this)} className='CreateMessage__Input__Textarea' onChange={this.handleChange.bind(this)} value={value}/>
+          <TextArea ref='input' readOnly={isDisabled()} onKeyDown={this.handleKeyDown.bind(this)} onKeyUp={this.handleKeyUp.bind(this)} className='CreateMessage__Input__Textarea' onChange={this.handleChange.bind(this)} value={value}/>
           <a onClick={this.handleEmojiClick.bind(this)} className='CreateMessage__EmojiPicker'>
-            <Emoji className={emojiClasses} />
+            <Emoji className={emojiClasses} onEmojiSelect={this.handleEmojiSelect.bind(this)}/>
             <i className='icon-emoticon-happy'></i>
           </a>
         </div>

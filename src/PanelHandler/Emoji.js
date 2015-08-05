@@ -7,7 +7,7 @@ import './Emoji.css';
 class Emoji extends React.Component {
 
   handleEmojiClick(emoji) {
-    console.log(emoji);
+    this.props.onEmojiSelect(emoji);
   }
 
   render() {
@@ -18,7 +18,7 @@ class Emoji extends React.Component {
       obj[emoji] = true;
       var classes = cx(obj);
 
-      return <span key={key} onClick={this.handleEmojiClick.bind(this, emoji)} className={classes}></span>;
+      return <span key={key} onClick={this.handleEmojiClick.bind(this, key)} className={classes}></span>;
     });
     return (
       <div {...this.props}>
