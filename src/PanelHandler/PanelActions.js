@@ -26,7 +26,17 @@ export default {
   },
 
   removeMessage(id, messageId) {
-    Firebase.child('panels').child(id).child(`messages/${messageId}`).remove();
+    var ref = Firebase.child('panels').child(id).child(`messages/${messageId}`);
+    ref.once('value', (snapshot) => {
+      var message = snapshot.val();
+      if (message.type === 'EVENT') {
+        ref.remove();
+      } else {
+        message.source = 'This message has been deleted.';
+        message.type = 'EVENT';
+        ref.set(message);
+      }
+    });
   },
 
   setMicrophone(panel, user, value) {
