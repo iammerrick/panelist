@@ -47,20 +47,6 @@
   cursor: pointer;
 }
 
-
-.PanelHandler__Create {
-  background-color: #BADA55;
-  display: block;
-  color: #FFF;
-  text-decoration: none;
-  padding: 16px;
-  font-weight: bold;
-}
-
-.PanelHandler__Create__Text {
-  padding-left: 8px;
-}
-
 .PanelHandler__Title {
   background-color: #ECECEC;
   border-top: 1px solid rgba(0,0,0,0.1);
@@ -114,16 +100,6 @@
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.PanelHandler__Mobile__Close {
-  display: none;
-  cursor: pointer;
-  position: absolute;
-  padding: 16px;
-  top: 0px;
-  right: 0px;
-  color: #FFF;
-}
-
 .PanelHandler__Share__InputContainer {
   padding: 8px;
 }
@@ -136,38 +112,3 @@
   box-sizing: border-box;
 }
 
-@media(max-width: 720px) {
-
-  .PanelHandler__Sidebar {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1;
-    display: none;
-  }
-
-  .PanelHandler__Sidebar__Mobile {
-    display: block;
-  }
-
-  .PanelHandler__Mobile__Close{
-    display: block;
-  }
-
-  .PanelHandler__Body {
-    left: 0;
-  }
-
-  .PanelHandler__Header__Icon__Mobile {
-    display: inline-block;
-  }
-
-  .PanelHandler__Dashboard {
-    width: 100%;
-    bottom: auto;
-  }
-
-}

@@ -80,10 +80,6 @@ class PanelHandler extends React.Component {
     return (
       <div className='PanelHandler'>
         <div className={classes}>
-          <a href='/panel/create' className='PanelHandler__Create'>
-            <i className='icon-plus'></i> <span className='PanelHandler__Create__Text'>Create a Panel</span>
-          </a>
-          <a onClick={this.handleMobileClick.bind(this)} className='PanelHandler__Mobile__Close'><i className='icon-remove' /></a>
           <div className='PanelHandler__Title'>
             <div>Share This Panel</div>
             <div><a onClick={this.handleShareIntent.bind(this)}><i className='icon-twitter'></i></a></div>
