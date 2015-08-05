@@ -1,7 +1,13 @@
 import React from 'react';
 import Firebase from '../utils/Firebase';
 import cx from 'react-classset';
+import Facilitator from './components/Facilitator';
+import Panelists from './components/Panelists';
+import Viewers from './components/Viewers';
+import UserList from './components/UserList';
+import Share from './components/Share';
 import CurrentlyTyping from './CurrentlyTyping';
+import Header from './components/Header';
 import ProTip from './ProTip';
 import Observe from '../utils/Observe';
 import User from './User';
@@ -12,13 +18,6 @@ import PanelActions from './PanelActions';
 import './PanelHandler.css'
 
 class PanelHandler extends React.Component {
-
-  constructor() {
-    super(...arguments);
-    this.state = {
-      showMobile: false
-    };
-  }
 
   componentWillMount() {
     var online = Firebase.child('/.info/connected');
@@ -36,91 +35,17 @@ class PanelHandler extends React.Component {
     }
   }
 
-  handleLockClick() {
-    if (this.props.store.facilitator === Firebase.getAuth().uid) {
-      PanelActions.setLocked(this.props.panelId, !this.props.store.isLocked);
-    }
-  }
-
-  handleMobileClick(e) {
-    e.preventDefault();
-
-    this.setState({
-      showMobile: !this.state.showMobile
-    })
-  }
-
-  handleShareIntent() {
-    window.open(
-      `https://twitter.com/intent/tweet?url=${window.location}&text=${this.props.store.topic}&via=panelistio`,
-      'Share via Panelist.io',
-      'width=600,height=300,scrollbars=no,location=no,toolbar=no'
-    );
-  }
-
   render() {
-
-    function hasMicrophone(user, panel) {
-      return panel.microphones[user];
-    }
-
-    var facilitator = this.props.store.facilitator;
-    var classes = cx({
-      'PanelHandler__Sidebar': true,
-      'PanelHandler__Sidebar__Mobile': this.state.showMobile
-    });
-
-    var panelists = [];
-    for (var key in this.props.store.microphones) {
-      if (this.props.store.microphones[key]) {
-        panelists.push(key);
-      }
-    }
-  var presence = _.keys(this.props.store.presence);
-  var viewers = _.intersection(presence, _.xor(presence, panelists));
     return (
       <div className='PanelHandler'>
-        <div className={classes}>
-          <div className='PanelHandler__Title'>
-            <div>Share This Panel</div>
-            <div><a onClick={this.handleShareIntent.bind(this)}><i className='icon-twitter'></i></a></div>
-
-          </div>
-          <div className='PanelHandler__Share__InputContainer'>
-            <input readOnly={true} value={window.location} className='PanelHandler__Share__Input' />
-          </div>
-          <div className='PanelHandler__Title'>
-            <div>
-              Facilitator
-            </div>
-            <ProTip>The facilitator is running the show, he promotes viewers to panelists and locks the conversation.</ProTip>
-          </div>
-          <Users userIds={[facilitator]} panelId={this.props.panelId} />
-          <div className='PanelHandler__Title'>
-            <div>
-              Panelists ({panelists.length})
-            </div>
-            <ProTip>A panelist is someone with a microphone. They are permitted to engage in the conversation.</ProTip>
-          </div>
-          <Users userIds={panelists} panelId={this.props.panelId} />
-          <div className='PanelHandler__Title'>
-            <div>
-              Viewers ({viewers.length})
-            </div>
-            <ProTip>A viewer is an observer of the conversation. They aren't able to engage in the conversation unless they are promoted to a panelist by the facilitator.</ProTip>
-          </div>
-          <Users userIds={viewers} panelId={this.props.panelId} />
+        <div className='PanelHandler__Sidebar'>
+          <Share panel={this.props.store} />
+          <Facilitator panelId={this.props.panelId} panel={this.props.store} />
+          <Panelists panelId={this.props.panelId} panel={this.props.store} />
+          <Viewers panelId={this.props.panelId} panel={this.props.store} />
         </div>
         <div className='PanelHandler__Body'>
-          <div className='PanelHandler__Header'>
-            <div>
-              <span className='PanelHandler__Header__Icon' onClick={this.handleLockClick.bind(this)}>{this.props.store.isLocked ? <i className='icon-lock'></i> : <i className='icon-lock-open'></i>}</span>
-              <a onClick={this.handleMobileClick.bind(this)} className='PanelHandler__Header__Icon PanelHandler__Header__Icon__Mobile'><i className='icon-account-multiple'></i></a>
-            </div>
-            <div className='Topic'>
-              {this.props.store.topic}
-            </div>
-          </div>
+          <Header className='PanelHandler__Header' panelId={this.props.panelId} panel={this.props.store} />
           <Messages className='PanelHandler__Messages' panelId={this.props.panelId} />
           <div className='PanelHandler__CreateMessage'>
             <CreateMessage panelId={this.props.panelId} />
