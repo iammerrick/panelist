@@ -54,7 +54,7 @@
 
 .Messages__Helper {
   position: absolute;
-  bottom: 0;
+  bottom: 8px;
   color: #999;
 }
 

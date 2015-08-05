@@ -1,6 +1,8 @@
 import Firebase from '../utils/Firebase';
 import FB from 'firebase';
 
+var typing = false;
+
 export default {
   remove(panel) {
     Firebase.child('panels').child(panel).remove();
@@ -70,5 +72,21 @@ export default {
         type: 'EVENT'
       });
     });
+  },
+
+  startTyping(panel) {
+    if (!typing) {
+      var user = Firebase.getAuth().uid;
+      Firebase.child(`panels/${panel}/typing`).child(user).set(true);
+      Firebase.child(`panels/${panel}/typing`).child(user).onDisconnect().remove();
+      typing = true;
+    }
+  },
+
+  stopTyping(panel) {
+    if (typing) {
+      Firebase.child(`panels/${panel}/typing`).child(Firebase.getAuth().uid).set(false);
+      typing = false;
+    }
   }
 }

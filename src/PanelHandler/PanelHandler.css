@@ -111,3 +111,10 @@
   box-sizing: border-box;
 }
 
+.PanelHandler__Typing {
+  position: absolute;
+  bottom: 8px;
+  left: 24px;
+  font-size: 11px;
+  color: #999;
+}

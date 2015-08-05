@@ -45,6 +45,12 @@ class CreateMessage extends React.Component {
     if (e.keyCode === 13 && !this.props.store.isLocked) {
       this.handleSubmitClick();
     }
+
+    if (this.state.value) {
+      PanelActions.startTyping(this.props.panelId);
+    } else {
+      PanelActions.stopTyping(this.props.panelId);
+    }
   }
 
   render() {
