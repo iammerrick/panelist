@@ -43,6 +43,7 @@ export default {
 
   setMicrophone(panel, user, value) {
     Firebase.child(`panels/${panel}/microphones`).child(user).set(value);
+    Firebase.child(`users-panels/${Firebase.getAuth().uid}/panelist/${panel}`).set(value);
 
     Firebase.child(`users/${user}`).once('value', (snapshot) => {
       if (value) {
