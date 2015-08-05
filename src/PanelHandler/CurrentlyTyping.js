@@ -1,4 +1,5 @@
 import React from 'react';
+import Firebase from '../utils/Firebase';
 import Observe from '../utils/Observe';
 import Username from './Username';
 import './CurrentlyTyping.css';
@@ -8,7 +9,7 @@ class CurrentlyTyping extends React.Component {
     var isTyping = {};
     
     for (var key in this.props.store) {
-      if (this.props.store[key]) {
+      if (this.props.store[key] && key !== Firebase.getAuth().uid) {
         isTyping[key] = this.props.store[key];
       }
     }
