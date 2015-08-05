@@ -21,62 +21,53 @@
 
 .emoji {
   display: inline-block;
-  width: 32px;
-  height: 32px;
+  width: 16px;
+  height: 16px;
   padding: 4px;
   text-indent: -9999px;
 }
 
 .emoji-thumbs-up {
   background: url(./emojis/thumbs-up.png) no-repeat;
-  background-position-x: 4px;
-  background-position-y: 2px;
+  background-size: contain;
 }
 
 .emoji-thumbs-down {
   background: url(./emojis/thumbs-down.png) no-repeat;
-  background-position-x: 4px;
-  background-position-y: 2px;
+  background-size: contain;
 }
 
 .emoji-heart {
   background: url(./emojis/heart.png) no-repeat;
-  background-position-x: 4px;
-  background-position-y: 2px;
+  background-size: contain;
 }
 
 .emoji-tongue {
   background: url(./emojis/tongue-out.png) no-repeat;
-  background-position-x: 4px;
-  background-position-y: 2px;
+  background-size: contain;
 }
 
 .emoji-wink {
   background: url(./emojis/wink.png) no-repeat;
-  background-position-x: 4px;
-  background-position-y: 2px;
+  background-size: contain;
 }
 
 .emoji-smiley {
   background: url(./emojis/smiley.png) no-repeat;
-  background-position-x: 4px;
-  background-position-y: 2px;
+  background-size: contain;
 }
 
 .emoji-disappointed {
   background: url(./emojis/disappointed.png) no-repeat;
-  background-position-x: 4px;
-  background-position-y: 2px;
+  background-size: contain;
 }
 
 .emoji-cool {
   background: url(./emojis/cool.png) no-repeat;
-  background-position-x: 4px;
-  background-position-y: 2px;
+  background-size: contain;
 }
 
 .emoji-poop {
   background: url(./emojis/poop.png) no-repeat;
-  background-position-x: 4px;
-  background-position-y: 2px;
+  background-size: contain;
 }
