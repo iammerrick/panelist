@@ -7,12 +7,14 @@
 .NavigationBar__Icon {
   color: #fff;
   font-size: 24px;
-  padding: 8px 0 8px 32px;
+  display: flex;
+  padding: 16px;
 }
 
 .NavigationBar__LogoutIcon, .NavigationBar__ListIcon, .NavigationBar__PlusIcon {
   color: #fff;
   text-decoration: none;
+  margin: auto;
 }
 
 .NavigationBar__LogoutIcon {
