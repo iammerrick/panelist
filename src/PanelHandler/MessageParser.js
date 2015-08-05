@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import AppConstants from '../constants/AppConstants';
 
 function htmlEscape(str) {
   return String(str)
@@ -16,7 +17,7 @@ export default (message) => {
     return input.replace(new RegExp('(^|:)(' + needle + ')(:|$)','ig'), '<span class="emoji emoji-$2">$1$2$3</span>');
   }
 
-  ['smile', 'heart'].forEach((emoji) => {
+  Object.keys(AppConstants.EMOJI).forEach((emoji) => {
     message = updateHaystack(message, emoji);
   });
 
