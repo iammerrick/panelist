@@ -10,16 +10,18 @@ function htmlEscape(str) {
 }
   
 export default (message) => {
-
   message = htmlEscape(message);
 
-  var match = message.match(/:(.+):/);
-
-  if (match) {
-    if (['smile', 'frown', 'thumbs-up', 'thumbs-down'].indexOf(match[1]) !== -1) {
-      message = message.replace(/:(.+):/, '<span class="emoji emoji\-$1">:$1:<\/span>');
-    }
+  function updateHaystack(input, needle) {
+    return input.replace(new RegExp('(^|:)(' + needle + ')(:|$)','ig'), '<span class="emoji emoji-$2">$1$2$3</span>');
   }
+
+  ['smile', 'heart'].forEach((emoji) => {
+    message = updateHaystack(message, emoji);
+  });
+
+  console.log(message);
+
   return message;
 }
 
