@@ -121,9 +121,7 @@ class PanelHandler extends React.Component {
               {this.props.store.topic}
             </div>
           </div>
-          <div className='PanelHandler__Messages'>
-            <Messages panelId={this.props.panelId} />
-          </div>
+          <Messages className='PanelHandler__Messages' panelId={this.props.panelId} />
           <div className='PanelHandler__CreateMessage'>
             <CreateMessage panelId={this.props.panelId} />
           </div>

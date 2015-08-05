@@ -24,6 +24,7 @@
 .MessageMeta {
   display: flex;
   align-items: center;
+  min-height: 28px;
 }
 
 .MessageMeta__Timestamp {
