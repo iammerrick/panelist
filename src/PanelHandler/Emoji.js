@@ -1,20 +1,29 @@
 import React from 'react';
+import AppConstants from '../constants/AppConstants';
+import cx from 'react-classset';
+import _ from 'lodash';
 import './Emoji.css';
 
 class Emoji extends React.Component {
+
+  handleEmojiClick(emoji) {
+    console.log(emoji);
+  }
+
   render() {
+    var emojis = _.map(AppConstants.EMOJI, (emoji, key) => {
+      var obj = {
+        emoji: true
+      }
+      obj[emoji] = true;
+      var classes = cx(obj);
+
+      return <span key={key} onClick={this.handleEmojiClick.bind(this, emoji)} className={classes}></span>;
+    });
     return (
       <div {...this.props}>
         <div className='Emoji__Container'>
-          <span className='emoji emoji-thumbs-up'></span>
-          <span className='emoji emoji-thumbs-down'></span>
-          <span className='emoji emoji-smiley'></span>
-          <span className='emoji emoji-heart'></span>
-          <span className='emoji emoji-disappointed'></span>
-          <span className='emoji emoji-tongue'></span>
-          <span className='emoji emoji-wink'></span>
-          <span className='emoji emoji-cool'></span>
-          <span className='emoji emoji-poop'></span>
+          {emojis}
         </div>
         <div className='Emoji__ArrowDown'></div>
       </div>
