@@ -5,18 +5,26 @@ import TextArea from 'react-textarea-autosize';
 import Observe from '../utils/Observe';
 import './CreateMessage.css';
 import cx from 'react-classset';
+import Emoji from './Emoji';
 
 class CreateMessage extends React.Component {
   constructor() {
     super(...arguments);
     this.state = {
-      value: ''
+      value: '',
+      isEmoji: true
     };
   }
 
   handleChange(e) {
     this.setState({
       value: e.target.value
+    });
+  }
+
+  handleEmojiClick() {
+    this.setState({
+      isEmoji: !this.state.isEmoji
     });
   }
 
@@ -44,6 +52,12 @@ class CreateMessage extends React.Component {
   handleKeyUp(e) {
     if (e.keyCode === 13 && !this.props.store.isLocked) {
       this.handleSubmitClick();
+    }
+
+    if (this.state.value) {
+      PanelActions.startTyping(this.props.panelId);
+    } else {
+      PanelActions.stopTyping(this.props.panelId);
     }
   }
 
@@ -73,11 +87,20 @@ class CreateMessage extends React.Component {
       'CreateMessage__Input--Locked': isDisabled()
     });
 
+    var emojiClasses = cx({
+      CreateMessage__EmojiPicker__Tooltip: !this.state.isEmoji,
+      'CreateMessage__EmojiPicker--Display': this.state.isEmoji
+    });
+
     return (
       <div className='CreateMessage'>
         <div className={classes}>
           <a className='CreateMessage__Submit' disabled={this.props.store.isLocked} onClick={this.handleSubmitClick.bind(this)}><i className={isDisabled() ? 'icon-lock' : 'icon-plus'} /></a>
           <TextArea readOnly={isDisabled()} onKeyUp={this.handleKeyUp.bind(this)} className='CreateMessage__Input__Textarea' onChange={this.handleChange.bind(this)} value={value}/>
+          <a onClick={this.handleEmojiClick.bind(this)} className='CreateMessage__EmojiPicker'>
+            <Emoji className={emojiClasses} />
+            <i className='icon-emoticon-happy'></i>
+          </a>
         </div>
       </div>
     );

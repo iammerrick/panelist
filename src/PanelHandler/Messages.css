@@ -3,13 +3,13 @@
 }
 
 .Message {
-  padding: 8px 0;
+  padding: 8px;
+  margin: 8px 0;
+  position: relative;
 }
 
 .Message--Event {
   background-color: #FBFBFB;
-  padding: 16px;
-  margin: 16px;
 }
 
 .Message--Event .Message__Source {
@@ -24,6 +24,7 @@
 .MessageMeta {
   display: flex;
   align-items: center;
+  min-height: 28px;
 }
 
 .MessageMeta__Timestamp {
@@ -46,11 +47,14 @@
 .MessageMeta__RemoveIcon {
   cursor: pointer;
   display: none;
+  position: absolute;
+  right: 8px;
+  top: 8px;
 }
 
 .Messages__Helper {
   position: absolute;
-  bottom: 0;
+  bottom: 8px;
   color: #999;
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import Firebase from '../utils/Firebase';
 import cx from 'react-classset';
+import CurrentlyTyping from './CurrentlyTyping';
 import ProTip from './ProTip';
 import Observe from '../utils/Observe';
 import User from './User';
@@ -120,11 +121,12 @@ class PanelHandler extends React.Component {
               {this.props.store.topic}
             </div>
           </div>
-          <div className='PanelHandler__Messages'>
-            <Messages panelId={this.props.panelId} />
-          </div>
+          <Messages className='PanelHandler__Messages' panelId={this.props.panelId} />
           <div className='PanelHandler__CreateMessage'>
             <CreateMessage panelId={this.props.panelId} />
+          </div>
+          <div className='PanelHandler__Typing'>
+            <CurrentlyTyping panelId={this.props.panelId} />
           </div>
         </div>
       </div>

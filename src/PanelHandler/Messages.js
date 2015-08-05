@@ -18,8 +18,13 @@ class Messages extends React.Component {
   componentDidUpdate() {
     if (this.shouldScrollBottom) {
       var node = React.findDOMNode(this);
-      node.scrollTop = node.scrollHeight
+      node.scrollTop = node.scrollHeight;
     }
+  }
+
+  componentDidMount() {
+    var node = React.findDOMNode(this);
+    node.scrollTop = node.scrollHeight;
   }
 
   handleRemoveClick(key) {
@@ -51,7 +56,7 @@ class Messages extends React.Component {
         </div>
       );
     });
-    return <div className='Messages'>{messages.length > 0 ? messages : <div className='Messages__Helper'>Sure is quiet in here, try typing something below...</div>}</div>
+    return <div className={`Messages ${this.props.className}`}>{messages.length > 0 ? messages : <div className='Messages__Helper'>Sure is quiet in here, try typing something below...</div>}</div>
   }
 }
 

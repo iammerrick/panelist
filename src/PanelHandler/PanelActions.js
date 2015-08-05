@@ -1,6 +1,8 @@
 import Firebase from '../utils/Firebase';
 import FB from 'firebase';
 
+var typing = false;
+
 export default {
   remove(panel) {
     Firebase.child('panels').child(panel).remove();
@@ -26,7 +28,17 @@ export default {
   },
 
   removeMessage(id, messageId) {
-    Firebase.child('panels').child(id).child(`messages/${messageId}`).remove();
+    var ref = Firebase.child('panels').child(id).child(`messages/${messageId}`);
+    ref.once('value', (snapshot) => {
+      var message = snapshot.val();
+      if (message.type === 'EVENT') {
+        ref.remove();
+      } else {
+        message.source = 'This message has been deleted.';
+        message.type = 'EVENT';
+        ref.set(message);
+      }
+    });
   },
 
   setMicrophone(panel, user, value) {
@@ -60,5 +72,21 @@ export default {
         type: 'EVENT'
       });
     });
+  },
+
+  startTyping(panel) {
+    if (!typing) {
+      var user = Firebase.getAuth().uid;
+      Firebase.child(`panels/${panel}/typing`).child(user).set(true);
+      Firebase.child(`panels/${panel}/typing`).child(user).onDisconnect().remove();
+      typing = true;
+    }
+  },
+
+  stopTyping(panel) {
+    if (typing) {
+      Firebase.child(`panels/${panel}/typing`).child(Firebase.getAuth().uid).set(false);
+      typing = false;
+    }
   }
 }
