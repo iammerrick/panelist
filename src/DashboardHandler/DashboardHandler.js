@@ -20,11 +20,11 @@ class DashboardHandler extends React.Component {
     return (
       <div className='DashboardHandler'>
         <div className='PanelList'>
-          <div>
+          <div className='PanelList__Title'>
             Facilitator
           </div>
           <PanelList panels={getPanels(this.props.store.facilitator)} />
-          <div>
+          <div className='PanelList__Title'>
             Panelist 
           </div>
           <PanelList panels={getPanels(this.props.store.panelist)} />

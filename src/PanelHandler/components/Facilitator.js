@@ -12,6 +12,7 @@ class Facilitator extends React.Component {
         description='The facilitator is running the show, he promotes viewers to panelists and locks the conversation.' 
         userIds={[facilitator]}
         panelId={this.props.panelId}
+        panel={this.props.panel}
       />
     )
   }

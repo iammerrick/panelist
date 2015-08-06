@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'react-classset';
+import Message from './Message';
 import User from './User';
 import Observe from '../utils/Observe';
 import PanelActions from './PanelActions';
@@ -28,32 +29,12 @@ class Messages extends React.Component {
     node.scrollTop = node.scrollHeight;
   }
 
-  handleRemoveClick(key) {
-    PanelActions.removeMessage(this.props.panelId, key);
-  }
 
   render() {
     var uid = Firebase.getAuth().uid;
     var messages = _.map(this.props.store.messages, (message, key) => {
       var canDelete = message.userId === uid && !this.props.store.isLocked;
-      var classes = cx({
-        'Message': true,
-        'Message--Event': message.type === 'EVENT'
-      });
-      return (
-        <div key={key} className={classes}>
-          <div className='MessageMeta'>
-            <div className='MessageMeta__Username'>
-              <User panelId={this.props.panelId} userId={message.userId} />
-            </div>
-            <div className='MessageMeta__Timestamp'>
-              <Moment timeStamp={message.timeStamp} />
-              { canDelete ? <span className="MessageMeta__RemoveIcon" onClick={this.handleRemoveClick.bind(this, key)}><i className='icon-remove'></i></span> : null}
-            </div>
-          </div>
-          <div className='Message__Source' dangerouslySetInnerHTML={{ __html: MessageParser(message.source)}} />
-        </div>
-      );
+      return <Message panelId={this.props.panelId} message={message} canDelete={canDelete} key={key} messageId={key} />
     });
     return <div className={`Messages ${this.props.className}`}>{messages.length > 0 ? messages : <div className='Messages__Helper'>Sure is quiet in here, try typing something below...</div>}</div>
   }

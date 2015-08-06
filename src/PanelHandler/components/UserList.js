@@ -12,7 +12,7 @@ class UserList extends React.Component {
           </div>
           <ProTip>{this.props.description}</ProTip>
         </div>
-        <Users userIds={this.props.userIds} panelId={this.props.panelId} />
+        <Users userIds={this.props.userIds} panelId={this.props.panelId} panel={this.props.panel} />
       </div>
     )
     

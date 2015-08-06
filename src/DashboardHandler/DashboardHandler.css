@@ -23,6 +23,10 @@
   flex-direction: column;
 }
 
+.PanelList__Title {
+  padding-top: 16px;
+}
+
 .DashboardHandler__Create {
   color: #FFF;
   text-transform: uppercase;

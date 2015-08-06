@@ -5,6 +5,15 @@ import OnlineNugget from './OnlineNugget';
 import './User.css'
 
 class User extends React.Component {
+  shouldComponentUpdate(props) {
+    return (
+      this.props.panelId !== props.onlineIndicator 
+        || this.props.panelId !== props.panelId 
+        || this.props.userId !== props.userId
+        || this.props.store.image !== props.store.image 
+        || this.props.store.name !== props.name
+    );
+  }
   render() {
     return (
       <div className='User'>

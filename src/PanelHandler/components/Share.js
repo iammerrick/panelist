@@ -2,6 +2,10 @@ import React from 'react';
 
 class Share extends React.Component {
 
+  shouldComponentUpdate(props, state) {
+    return props.panel.topic !== this.props.panel.topic;
+  }
+
   handleShareIntent() {
     window.open(
       `https://twitter.com/intent/tweet?url=${window.location}&text=${this.props.panel.topic}&via=panelistio`,

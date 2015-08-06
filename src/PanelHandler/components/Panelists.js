@@ -17,6 +17,7 @@ class Panelists extends React.Component {
         description='A panelist is someone with a microphone. They are permitted to engage in the conversation.'
         userIds={panelists} 
         panelId={this.props.panelId}
+        panel={this.props.panel}
       />
     )
   }
