@@ -9,7 +9,10 @@ var AppConstants = {
     'tongue': 'emoji-tongue',
     'wink': 'emoji-wink',
     'cool': 'emoji-cool',
-    'poop': 'emoji-poop'
+    'poop': 'emoji-poop',
+    'neutral-face': 'emoji-neutral-face',
+    'cry': 'emoji-cry',
+    'joy': 'emoji-joy'
   }
 };
 

@@ -13,7 +13,8 @@ class Emoji extends React.Component {
   render() {
     var emojis = _.map(AppConstants.EMOJI, (emoji, key) => {
       var obj = {
-        emoji: true
+        emoji: true,
+        emoji__InsideContainer: true
       }
       obj[emoji] = true;
       var classes = cx(obj);
