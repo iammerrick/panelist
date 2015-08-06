@@ -21,11 +21,11 @@ class DashboardHandler extends React.Component {
       <div className='DashboardHandler'>
         <div className='PanelList'>
           <div className='PanelList__Title'>
-            Facilitator
+            Facilitator:
           </div>
           <PanelList panels={getPanels(this.props.store.facilitator)} />
           <div className='PanelList__Title'>
-            Panelist 
+            Panelist:
           </div>
           <PanelList panels={getPanels(this.props.store.panelist)} />
           <a href='/panel/create' className='DashboardHandler__Create'><i className='icon-plus DashboardHandler__Create__Icon' /> Create Panel</a>
